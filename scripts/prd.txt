@@ -1,0 +1,300 @@
+# 단위변환기 웹사이트 - Simple Unit Converter
+
+## Overview
+모든 종류의 단위 변환을 쉽고 빠르게 수행할 수 있는 현대적인 웹 애플리케이션입니다. 일상생활과 업무에서 자주 사용하는 단위들을 직관적인 인터페이스로 변환할 수 있으며, 다크/라이트 모드, 반응형 디자인, PWA 기능을 지원합니다. Next.js 15의 최신 기능을 활용하여 빠른 로딩과 뛰어난 SEO 성능을 제공합니다.
+
+## Core Features
+
+### 1. 길이 단위 변환
+- 미터법 (mm, cm, m, km)
+- 야드파운드법 (inch, feet, yard, mile)
+- 기타 단위 (nautical mile, light year 등)
+
+### 2. 무게 단위 변환
+- 그램 단위 (mg, g, kg, ton)
+- 파운드 단위 (oz, lb, stone)
+- 기타 단위 (carat, grain 등)
+
+### 3. 부피 단위 변환
+- 리터 단위 (ml, l, kl)
+- 갤런/온스 단위 (fl oz, cup, pint, quart, gallon)
+- 기타 단위 (barrel, cubic meter 등)
+
+### 4. 온도 단위 변환
+- 섭씨 (Celsius)
+- 화씨 (Fahrenheit)  
+- 켈빈 (Kelvin)
+- 랭킨 (Rankine)
+
+### 5. 시간 단위 변환
+- 초, 분, 시간, 일, 주, 월, 년
+- 밀리초, 마이크로초
+
+### 6. 데이터 크기 변환
+- 바이트 단위 (B, KB, MB, GB, TB, PB)
+- 비트 단위 (bit, Kbit, Mbit, Gbit)
+- 이진/십진 단위 구분
+
+### 7. 속도 단위 변환
+- km/h, m/s, mph, knot
+- 마하, 광속 비율
+
+### 8. 면적 단위 변환
+- 제곱미터, 제곱킬로미터
+- 제곱피트, 에이커
+- 평, 헥타르
+
+### 9. 압력 단위 변환
+- 파스칼, 바, 기압
+- psi, mmHg, Torr
+
+### 10. 에너지 단위 변환
+- 줄, 칼로리, kWh
+- BTU, erg
+
+## User Experience
+
+### 사용자 페르소나
+1. **일반 소비자**: 요리, 운동, 쇼핑 시 단위 변환 필요
+2. **학생**: 과제, 시험 문제 해결
+3. **엔지니어/개발자**: 업무용 정밀 계산
+4. **해외 거주자**: 현지 단위 시스템과 익숙한 단위 간 변환
+
+### 핵심 사용자 플로우
+1. 웹사이트 접속
+2. 변환하고 싶은 카테고리 선택 (길이, 무게 등)
+3. 입력 단위와 출력 단위 선택
+4. 숫자 입력
+5. 실시간 변환 결과 확인
+6. 필요시 다른 단위로 추가 변환
+7. 자주 사용하는 변환 즐겨찾기 추가
+
+### UI/UX 고려사항
+- **미니멀한 디자인**: 핵심 기능에 집중
+- **반응형 레이아웃**: 모바일 우선 설계
+- **다크/라이트 모드**: 사용자 선호도 지원
+- **키보드 단축키**: 빠른 네비게이션
+- **자동완성**: 단위명 빠른 입력
+- **히스토리 기능**: 최근 변환 내역 저장
+- **즐겨찾기**: 자주 사용하는 변환 저장
+
+## Technical Architecture
+
+### Frontend Stack
+- **Framework**: Next.js 15 (App Router)
+- **UI Framework**: shadcn/ui + Tailwind CSS
+- **State Management**: Zustand
+- **Type Safety**: TypeScript
+- **Forms**: React Hook Form + Zod validation
+- **Icons**: Lucide React
+- **Animations**: Framer Motion
+
+### Component 구조
+```
+components/
+├── ui/ (shadcn components)
+├── converter/
+│   ├── CategorySelector.tsx
+│   ├── UnitSelector.tsx
+│   ├── NumberInput.tsx
+│   ├── ConversionResult.tsx
+│   └── ConversionHistory.tsx
+├── layout/
+│   ├── Header.tsx
+│   ├── Footer.tsx
+│   └── ThemeToggle.tsx
+└── features/
+    ├── Favorites.tsx
+    ├── RecentConversions.tsx
+    └── ShareResult.tsx
+```
+
+### Data Models (TypeScript Interfaces)
+```typescript
+interface ConversionCategory {
+  id: string;
+  name: string;
+  units: Unit[];
+}
+
+interface Unit {
+  id: string;
+  name: string;
+  symbol: string;
+  toBase: number; // 기준 단위로 변환하는 계수
+  category: string;
+}
+
+interface Conversion {
+  id: string;
+  fromUnit: Unit;
+  toUnit: Unit;
+  value: number;
+  result: number;
+  timestamp: Date;
+}
+```
+
+### State Management (Zustand)
+- 현재 선택된 카테고리
+- 선택된 입력/출력 단위
+- 변환 히스토리
+- 즐겨찾기 목록
+- 테마 설정
+
+### 배포 환경
+- **Platform**: Vercel
+- **Domain**: 커스텀 도메인 설정
+- **CDN**: Vercel Edge Network
+- **Analytics**: Vercel Analytics
+- **Monitoring**: Vercel Web Vitals
+
+## Development Roadmap
+
+### Phase 1: MVP (핵심 기능)
+- 기본 UI/UX 설계 및 구현
+- 5개 핵심 카테고리 (길이, 무게, 부피, 온도, 시간)
+- 기본 변환 로직
+- 반응형 디자인
+- 다크/라이트 모드
+- Vercel 배포 설정
+
+### Phase 2: 확장 기능
+- 나머지 카테고리 추가 (데이터, 속도, 면적, 압력, 에너지)
+- 변환 히스토리 기능
+- 즐겨찾기 기능
+- PWA 기능 (오프라인 지원)
+- 공유 기능
+
+### Phase 3: 고급 기능
+- 키보드 단축키
+- 음성 입력 지원
+- 다국어 지원 (영어, 한국어)
+- 고급 수학 계산기 모드
+- 사용자 맞춤 단위 추가
+
+### Phase 4: 최적화 및 확장
+- 성능 최적화
+- SEO 강화
+- 분석 및 사용자 행동 추적
+- API 제공
+- 브라우저 확장 프로그램
+
+## Logical Dependency Chain
+
+1. **기반 구조 설정**
+   - Next.js 15 프로젝트 초기화
+   - shadcn/ui 설정
+   - TypeScript 구성
+   - Tailwind CSS 설정
+
+2. **핵심 UI 컴포넌트**
+   - 레이아웃 컴포넌트 (Header, Footer)
+   - 테마 토글
+   - 기본 UI 컴포넌트
+
+3. **변환 시스템 기반**
+   - 단위 데이터 모델 정의
+   - 변환 로직 구현
+   - Zustand 스토어 설정
+
+4. **기본 변환기 UI**
+   - 카테고리 선택기
+   - 단위 선택기
+   - 숫자 입력 컴포넌트
+   - 결과 표시 컴포넌트
+
+5. **상호작용 기능**
+   - 실시간 변환
+   - 입력 검증
+   - 에러 처리
+
+6. **추가 기능 구현**
+   - 히스토리 기능
+   - 즐겨찾기
+   - 공유 기능
+
+7. **PWA 및 최적화**
+   - Service Worker
+   - 캐싱 전략
+   - 성능 최적화
+
+## SEO 전략
+
+### 기술적 SEO
+- **Next.js 15 App Router**: 서버사이드 렌더링으로 크롤링 최적화
+- **메타데이터**: 각 변환기 페이지별 맞춤 메타태그
+- **구조화된 데이터**: JSON-LD로 계산기 스키마 마크업
+- **사이트맵**: 자동 생성되는 XML 사이트맵
+- **robots.txt**: 크롤링 최적화
+
+### 콘텐츠 SEO
+- **키워드 타겟팅**:
+  - 주요: "단위변환기", "unit converter", "길이변환", "무게변환"
+  - 롱테일: "킬로그램 파운드 변환", "섭씨 화씨 계산기"
+- **페이지 구조**:
+  - `/` - 홈페이지 (모든 변환기 개요)
+  - `/length` - 길이 변환기
+  - `/weight` - 무게 변환기
+  - `/temperature` - 온도 변환기
+  - 각 카테고리별 전용 페이지
+
+### 사용자 경험 SEO
+- **Core Web Vitals 최적화**:
+  - LCP < 2.5초
+  - FID < 100ms
+  - CLS < 0.1
+- **모바일 최적화**: 모바일 우선 반응형 디자인
+- **페이지 속도**: Next.js 15 최적화 기능 활용
+- **접근성**: WCAG 2.1 AA 준수
+
+### 링크 빌딩 전략
+- 교육 사이트와의 파트너십
+- 개발자 커뮤니티 공유
+- 오픈소스로 GitHub 공개
+- 블로그 콘텐츠: 단위 변환 가이드
+
+## Risks and Mitigations
+
+### 기술적 위험
+- **Next.js 15 호환성**: 안정적인 라이브러리만 사용, 단계적 업그레이드
+- **성능 문제**: 코드 스플리팅, 레이지 로딩 적용
+- **브라우저 호환성**: 최신 브라우저 타겟, 폴리필 최소화
+
+### 비즈니스 위험
+- **경쟁사 존재**: 차별화된 UX와 PWA 기능으로 경쟁력 확보
+- **SEO 경쟁**: 롱테일 키워드와 고품질 콘텐츠로 차별화
+- **사용자 획득**: 개발자 커뮤니티를 통한 오가닉 성장
+
+### 운영 위험
+- **Vercel 의존성**: 다른 플랫폼 배포 옵션 준비
+- **유지보수**: 명확한 코드 구조와 문서화
+- **확장성**: 모듈식 아키텍처로 기능 확장 용이성 확보
+
+## Appendix
+
+### 기술 스펙
+- **Node.js**: 18+
+- **React**: 18+
+- **Next.js**: 15+
+- **TypeScript**: 5+
+- **Tailwind CSS**: 3+
+
+### 성능 목표
+- **Lighthouse 점수**: 95+ (모든 항목)
+- **First Contentful Paint**: < 1.5초
+- **Time to Interactive**: < 3초
+- **Bundle Size**: < 100KB (gzipped)
+
+### 참고 리서치
+- Google의 단위 변환기 UX 분석
+- 기존 변환기 도구들의 사용성 문제점
+- 모바일에서의 변환기 사용 패턴
+- 교육 분야에서의 단위 변환 니즈
+
+### 향후 확장 가능성
+- API 서비스 제공
+- 모바일 앱 개발
+- 브라우저 확장 프로그램
+- 화폐 변환 기능 추가
+- 실시간 환율 정보 연동 
