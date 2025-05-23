@@ -7,9 +7,11 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Calculator, X } from 'lucide-react'
 import { validateInput } from '@/lib/conversion-utils'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export function NumberInput() {
   const { inputValue, setInputValue, fromUnit, toUnit } = useConverterStore()
+  const { t } = useLanguage()
   const [localValue, setLocalValue] = useState(inputValue)
   const [error, setError] = useState<string | null>(null)
   const [isFocused, setIsFocused] = useState(false)
@@ -36,7 +38,7 @@ export function NumberInput() {
       setInputValue(value)
       setError(null)
     } else {
-      setError(validation.error || '올바른 숫자를 입력해주세요')
+      setError(validation.error || t.converter.enterValidNumber)
     }
   }
 
@@ -81,13 +83,13 @@ export function NumberInput() {
       <CardHeader>
         <CardTitle className="text-lg flex items-center gap-2">
           <Calculator className="h-5 w-5" />
-          값 입력
+          {t.converter.enterValue}
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4 flex-1">
         <div className="space-y-2">
           <label htmlFor="number-input" className="text-sm font-medium text-foreground">
-            변환할 값
+            {t.converter.from}
             {fromUnit && (
               <span className="text-muted-foreground ml-1">
                 ({fromUnit.symbol})
@@ -104,7 +106,7 @@ export function NumberInput() {
               onKeyDown={handleKeyDown}
               onFocus={handleFocus}
               onBlur={handleBlur}
-              placeholder="숫자를 입력하세요"
+              placeholder={t.converter.enterValue}
               className={`pr-10 ${error ? 'border-destructive focus-visible:ring-destructive' : ''}`}
               aria-invalid={!!error}
               aria-describedby={error ? 'input-error' : undefined}
@@ -120,7 +122,7 @@ export function NumberInput() {
                 size="sm"
                 className="absolute right-1 top-1/2 transform -translate-y-1/2 h-8 w-8 p-0"
                 onClick={handleClear}
-                aria-label="입력값 지우기"
+                aria-label={t.common.clear}
               >
                 <X className="h-4 w-4" />
               </Button>
@@ -137,17 +139,17 @@ export function NumberInput() {
           {/* 도움말 텍스트 */}
           {!fromUnit || !toUnit ? (
             <p className="text-sm text-muted-foreground">
-              변환할 단위를 먼저 선택해주세요
+              {t.converter.selectUnitsFirst}
             </p>
           ) : (
             <p className="text-sm text-muted-foreground">
               {isFocused ? (
                 <>
-                  <kbd className="px-1 py-0.5 text-xs bg-muted rounded">Enter</kbd> 변환,{' '}
-                  <kbd className="px-1 py-0.5 text-xs bg-muted rounded">Esc</kbd> 지우기
+                  <kbd className="px-1 py-0.5 text-xs bg-muted rounded">Enter</kbd> {t.converter.convert},{' '}
+                  <kbd className="px-1 py-0.5 text-xs bg-muted rounded">Esc</kbd> {t.common.clear}
                 </>
               ) : (
-                canConvert ? '변환이 준비되었습니다' : '숫자를 입력해주세요'
+                canConvert ? t.converter.readyToConvert : t.converter.enterValue
               )}
             </p>
           )}
@@ -156,7 +158,7 @@ export function NumberInput() {
         {/* 빠른 입력 버튼들 */}
         {fromUnit && toUnit && (
           <div className="space-y-2">
-            <p className="text-sm font-medium text-foreground">빠른 입력</p>
+            <p className="text-sm font-medium text-foreground">{t.converter.quickInput}</p>
             <div className="flex flex-wrap gap-2">
               {['1', '10', '100', '1000'].map((value) => (
                 <Button

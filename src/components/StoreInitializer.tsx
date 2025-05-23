@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { initializeStores, useConverterStore, useSettingsStore } from '@/store'
+import { useCategoriesStore } from '@/store'
 
 export function StoreInitializer() {
   const [isInitialized, setIsInitialized] = useState(false)
@@ -9,7 +10,9 @@ export function StoreInitializer() {
   useEffect(() => {
     // 마운트 후 즉시 실행
     if (typeof window !== 'undefined' && !isInitialized) {
-      console.log('StoreInitializer: 스토어 초기화 시작')
+      if (process.env.NODE_ENV === 'development') {
+        console.log('StoreInitializer: 스토어 초기화 시작')
+      }
       
       // 스토어 초기화
       initializeStores()
@@ -19,7 +22,9 @@ export function StoreInitializer() {
       useSettingsStore.persist.rehydrate()
       
       setIsInitialized(true)
-      console.log('StoreInitializer: 스토어 초기화 완료')
+      if (process.env.NODE_ENV === 'development') {
+        console.log('StoreInitializer: 스토어 초기화 완료')
+      }
     }
   }, [isInitialized])
 

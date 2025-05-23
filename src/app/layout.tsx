@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
+import { cookies } from 'next/headers'
 import './globals.css'
 
 import { ThemeProvider } from '@/components/theme-provider'
@@ -8,6 +9,9 @@ import { Footer } from '@/components/layout/footer'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { StoreInitializer } from '@/components/StoreInitializer'
+import { LanguageProvider } from '@/contexts/LanguageContext'
+import { getLocaleFromCookie } from '@/lib/i18n'
+import type { Locale } from '@/lib/i18n'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -71,30 +75,36 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  // 쿠키에서 언어 설정 읽기
+  const cookieStore = await cookies()
+  const locale = getLocaleFromCookie(cookieStore.toString()) as Locale
+
   return (
-    <html lang="ko" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
       </head>
       <body className={inter.className}>
         <StoreInitializer />
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <div className="relative flex min-h-screen flex-col">
-            <Header />
-            <main className="flex-1">{children}</main>
-            <Footer />
-          </div>
-        </ThemeProvider>
+        <LanguageProvider initialLocale={locale}>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <div className="relative flex min-h-screen flex-col">
+              <Header />
+              <main className="flex-1">{children}</main>
+              <Footer />
+            </div>
+          </ThemeProvider>
+        </LanguageProvider>
         <Analytics />
         <SpeedInsights />
       </body>

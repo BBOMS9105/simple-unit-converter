@@ -8,10 +8,13 @@ import { Badge } from '@/components/ui/badge'
 import { Copy, CheckCircle, Calculator, TrendingUp } from 'lucide-react'
 import { convertUnit, convertTemperature, formatNumber, parseInputValue } from '@/lib/conversion-utils'
 import { ShareResult } from '@/components/features/ShareResult'
+import { useLanguage } from '@/contexts/LanguageContext'
+import { getUnitName } from '@/lib/i18n'
 
 export function ConversionResult() {
   const { inputValue, fromUnit, toUnit } = useConverterStore()
   const { precision } = useSettingsStore()
+  const { t } = useLanguage()
   const [copied, setCopied] = useState(false)
   const [result, setResult] = useState<string>('')
   const [rawValue, setRawValue] = useState<number>(0)
@@ -47,11 +50,11 @@ export function ConversionResult() {
         setResult(formatNumber(conversionResult.value, { precision }))
       }
     } catch {
-      setError('변환 중 오류가 발생했습니다')
+      setError(t.converter.conversionError)
       setResult('')
       setRawValue(0)
     }
-  }, [inputValue, fromUnit, toUnit, precision])
+  }, [inputValue, fromUnit, toUnit, precision, t.converter.conversionError])
 
   const handleCopy = async () => {
     if (!result) return
@@ -87,7 +90,7 @@ export function ConversionResult() {
       <CardHeader>
         <CardTitle className="text-lg flex items-center gap-2">
           <TrendingUp className="h-5 w-5" />
-          변환 결과
+          {t.converter.result}
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4 flex-1">
@@ -96,11 +99,11 @@ export function ConversionResult() {
           {!isReady ? (
             <div className="text-center text-muted-foreground">
               <Calculator className="h-8 w-8 mx-auto mb-2 opacity-50" />
-              <p>변환할 값과 단위를 선택해주세요</p>
+              <p>{t.converter.selectValueAndUnits}</p>
             </div>
           ) : error ? (
             <div className="text-center text-destructive">
-              <p className="font-medium">오류</p>
+              <p className="font-medium">{t.common.error}</p>
               <p className="text-sm">{error}</p>
             </div>
           ) : hasResult ? (
@@ -123,17 +126,17 @@ export function ConversionResult() {
               {/* 단위 정보 */}
               <div className="flex justify-center gap-2 text-xs">
                 <Badge variant="outline">
-                  {fromUnit.name}
+                  {getUnitName(fromUnit.id, t)}
                 </Badge>
                 <span className="text-muted-foreground">→</span>
                 <Badge variant="outline">
-                  {toUnit.name}
+                  {getUnitName(toUnit.id, t)}
                 </Badge>
               </div>
             </div>
           ) : (
             <div className="text-center text-muted-foreground">
-              <p>변환 중...</p>
+              <p>{t.converter.converting}</p>
             </div>
           )}
         </div>
@@ -151,12 +154,12 @@ export function ConversionResult() {
               {copied ? (
                 <>
                   <CheckCircle className="h-4 w-4" />
-                  복사됨
+                  {t.converter.copied}
                 </>
               ) : (
                 <>
                   <Copy className="h-4 w-4" />
-                  숫자 복사
+                  {t.converter.copy}
                 </>
               )}
             </Button>
@@ -171,12 +174,12 @@ export function ConversionResult() {
               {copied ? (
                 <>
                   <CheckCircle className="h-4 w-4" />
-                  복사됨
+                  {t.converter.copied}
                 </>
               ) : (
                 <>
                   <Copy className="h-4 w-4" />
-                  단위와 함께 복사
+                  {t.converter.copyWithUnit}
                 </>
               )}
             </Button>
@@ -193,7 +196,7 @@ export function ConversionResult() {
         {/* 정밀도 정보 */}
         {hasResult && (
           <div className="text-center text-xs text-muted-foreground border-t pt-3">
-            정밀도: {precision}자리 | 원값: {rawValue.toExponential(3)}
+            {t.converter.precision}: {precision}{t.converter.digits} | {t.converter.rawValue}: {rawValue.toExponential(3)}
           </div>
         )}
       </CardContent>

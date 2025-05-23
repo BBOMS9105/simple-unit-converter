@@ -1,16 +1,17 @@
 'use client'
 
 import { useState } from 'react'
+import { Button } from '@/components/ui/button'
 import { Globe } from 'lucide-react'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { Button } from "@/components/ui/button"
+} from '@/components/ui/dropdown-menu'
+import { type Locale } from '@/lib/i18n'
 
-const languages = [
+const languages: { code: Locale; name: string; flag: string }[] = [
   { code: 'ko', name: '한국어', flag: '🇰🇷' },
   { code: 'en', name: 'English', flag: '🇺🇸' },
   { code: 'ja', name: '日本語', flag: '🇯🇵' },
@@ -20,10 +21,12 @@ const languages = [
 export function LanguageSelector() {
   const [currentLanguage, setCurrentLanguage] = useState(languages[0]) // 기본값: 한국어
 
-  const handleLanguageChange = (language: typeof languages[0]) => {
+  const handleLanguageChange = (language: { code: Locale; name: string; flag: string }) => {
+    if (process.env.NODE_ENV === 'development') {
+      console.log('언어 변경:', language.name)
+    }
     setCurrentLanguage(language)
     // TODO: 실제 언어 변경 로직 구현 (다국어 지원 시스템 완성 후)
-    console.log('언어 변경:', language.name)
   }
 
   return (

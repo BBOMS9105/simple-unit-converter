@@ -5,10 +5,12 @@ import { Button } from '@/components/ui/button'
 import { Share2, Check, Copy, ExternalLink } from 'lucide-react'
 import { useConverterStore } from '@/store'
 import { convertUnit, convertTemperature, parseInputValue } from '@/lib/conversion-utils'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export function ShareResult() {
   const [copied, setCopied] = useState(false)
   const { inputValue, fromUnit, toUnit } = useConverterStore()
+  const { t } = useLanguage()
   
   // 변환 결과 생성
   const getConversionResult = () => {
@@ -58,7 +60,7 @@ export function ShareResult() {
     if (!shareText) return
     
     const shareData = {
-      title: 'Simple Unit Converter - 단위 변환기',
+      title: t.share.title,
       text: `${shareText} | Simple Unit Converter`,
       url: shareUrl,
     }
@@ -130,17 +132,17 @@ export function ShareResult() {
         {copied ? (
           <>
             <Check className="h-4 w-4" />
-            복사됨
+            {t.share.copied}
           </>
         ) : supportsWebShare ? (
           <>
             <Share2 className="h-4 w-4" />
-            공유
+            {t.share.share}
           </>
         ) : (
           <>
             <Copy className="h-4 w-4" />
-            결과 공유
+            {t.share.shareResult}
           </>
         )}
       </Button>
@@ -154,7 +156,7 @@ export function ShareResult() {
         disabled={copied}
       >
         <Copy className="h-4 w-4" />
-        결과 복사
+        {t.share.copyResult}
       </Button>
       
       {/* URL만 복사 */}
@@ -166,7 +168,7 @@ export function ShareResult() {
         disabled={copied}
       >
         <ExternalLink className="h-4 w-4" />
-        링크 복사
+        {t.share.copyLink}
       </Button>
     </div>
   )

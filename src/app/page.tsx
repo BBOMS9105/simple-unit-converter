@@ -1,87 +1,92 @@
+'use client'
+
 import Link from "next/link"
 import { ArrowRight, Calculator, Ruler, Weight, Thermometer, Clock, HardDrive } from "lucide-react"
 import { FunFacts } from "@/components/FunFacts"
-
-const categories = [
-  {
-    name: "길이",
-    description: "미터, 센티미터, 인치, 피트 등",
-    icon: Ruler,
-    href: "/length",
-    color: "text-blue-500",
-  },
-  {
-    name: "무게",
-    description: "킬로그램, 그램, 파운드, 온스 등",
-    icon: Weight,
-    href: "/weight",
-    color: "text-green-500",
-  },
-  {
-    name: "부피",
-    description: "리터, 갤런, 밀리리터 등",
-    icon: HardDrive,
-    href: "/volume",
-    color: "text-cyan-500",
-  },
-  {
-    name: "온도",
-    description: "섭씨, 화씨, 켈빈 등",
-    icon: Thermometer,
-    href: "/temperature", 
-    color: "text-red-500",
-  },
-  {
-    name: "시간",
-    description: "초, 분, 시간, 일, 주 등",
-    icon: Clock,
-    href: "/time",
-    color: "text-purple-500",
-  },
-  {
-    name: "데이터",
-    description: "바이트, KB, MB, GB 등",
-    icon: HardDrive,
-    href: "/data",
-    color: "text-orange-500",
-  },
-  {
-    name: "속도",
-    description: "m/s, km/h, mph 등",
-    icon: HardDrive,
-    href: "/speed",
-    color: "text-yellow-500",
-  },
-  {
-    name: "면적",
-    description: "제곱미터, 제곱킬로미터 등",
-    icon: HardDrive,
-    href: "/area",
-    color: "text-pink-500",
-  },
-  {
-    name: "압력",
-    description: "파스칼, 바, 대기압 등",
-    icon: HardDrive,
-    href: "/pressure",
-    color: "text-indigo-500",
-  },
-  {
-    name: "에너지",
-    description: "줄, 칼로리, BTU 등",
-    icon: HardDrive,
-    href: "/energy",
-    color: "text-emerald-500",
-  },
-]
+import { useLanguage } from "@/contexts/LanguageContext"
 
 export default function Home() {
+  const { t, locale } = useLanguage()
+
+  const categories = [
+    {
+      name: t.categories.length.name,
+      description: t.categories.length.description,
+      icon: Ruler,
+      href: "/length",
+      color: "text-blue-500",
+    },
+    {
+      name: t.categories.weight.name,
+      description: t.categories.weight.description,
+      icon: Weight,
+      href: "/weight",
+      color: "text-green-500",
+    },
+    {
+      name: t.categories.volume.name,
+      description: t.categories.volume.description,
+      icon: HardDrive,
+      href: "/volume",
+      color: "text-cyan-500",
+    },
+    {
+      name: t.categories.temperature.name,
+      description: t.categories.temperature.description,
+      icon: Thermometer,
+      href: "/temperature", 
+      color: "text-red-500",
+    },
+    {
+      name: t.categories.time.name,
+      description: t.categories.time.description,
+      icon: Clock,
+      href: "/time",
+      color: "text-purple-500",
+    },
+    {
+      name: t.categories.data.name,
+      description: t.categories.data.description,
+      icon: HardDrive,
+      href: "/data",
+      color: "text-orange-500",
+    },
+    {
+      name: t.categories.speed.name,
+      description: t.categories.speed.description,
+      icon: HardDrive,
+      href: "/speed",
+      color: "text-yellow-500",
+    },
+    {
+      name: t.categories.area.name,
+      description: t.categories.area.description,
+      icon: HardDrive,
+      href: "/area",
+      color: "text-pink-500",
+    },
+    {
+      name: t.categories.pressure.name,
+      description: t.categories.pressure.description,
+      icon: HardDrive,
+      href: "/pressure",
+      color: "text-indigo-500",
+    },
+    {
+      name: t.categories.energy.name,
+      description: t.categories.energy.description,
+      icon: HardDrive,
+      href: "/energy",
+      color: "text-emerald-500",
+    },
+  ]
+
   // JSON-LD 구조화 데이터
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
-    'name': 'Simple Unit Converter',
-    'description': '모든 종류의 단위를 쉽고 빠르게 변환하는 현대적인 웹 애플리케이션',
+    'name': t.site.title,
+    'description': t.site.description,
     'applicationCategory': 'UtilityApplication',
     'operatingSystem': 'Any',
     'url': 'https://simple-unit-converter.vercel.app',
@@ -90,19 +95,10 @@ export default function Home() {
       'price': '0',
       'priceCurrency': 'USD'
     },
-    'featureList': [
-      '길이 단위 변환',
-      '무게 단위 변환', 
-      '부피 단위 변환',
-      '온도 단위 변환',
-      '시간 단위 변환',
-      '데이터 크기 변환',
-      '속도 단위 변환',
-      '면적 단위 변환',
-      '압력 단위 변환',
-      '에너지 단위 변환'
-    ],
-    'inLanguage': 'ko-KR',
+    'featureList': categories.map(cat => cat.name),
+    'inLanguage': locale === 'ko' ? 'ko-KR' : 
+                 locale === 'ja' ? 'ja-JP' :
+                 locale === 'es' ? 'es-ES' : 'en-US',
     'author': {
       '@type': 'Organization',
       'name': 'Simple Unit Converter Team'
@@ -122,11 +118,13 @@ export default function Home() {
             <Calculator className="h-16 w-16 text-primary" />
           </div>
           <h1 className="text-4xl font-bold tracking-tight sm:text-6xl mb-4">
-            Simple Unit Converter
+            {t.site.title}
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-6">
-            모든 종류의 단위를 쉽고 빠르게 변환하세요. 
-            깔끔한 인터페이스와 정확한 계산으로 일상생활과 업무를 도와드립니다.
+            {t.site.description}
+          </p>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            {t.site.tagline}
           </p>
         </section>
 
@@ -137,7 +135,7 @@ export default function Home() {
 
         {/* Categories Section */}
         <section className="py-6">
-          <h2 className="text-3xl font-bold text-center mb-8">변환 카테고리</h2>
+          <h2 className="text-3xl font-bold text-center mb-8">{t.categories.title}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {categories.map((category) => {
               const Icon = category.icon
@@ -155,7 +153,7 @@ export default function Home() {
                   </div>
                   <p className="text-muted-foreground mb-4">{category.description}</p>
                   <div className="flex items-center text-sm text-primary">
-                    변환하기 <ArrowRight className="ml-1 h-4 w-4" />
+                    {t.categories.convert} <ArrowRight className="ml-1 h-4 w-4" />
                   </div>
                 </Link>
               )
@@ -166,24 +164,24 @@ export default function Home() {
         {/* Features Section */}
         <section className="py-12 bg-muted/50 rounded-lg">
           <div className="max-w-4xl mx-auto text-center px-6">
-            <h2 className="text-3xl font-bold mb-8">주요 특징</h2>
+            <h2 className="text-3xl font-bold mb-8">{t.features.title}</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div>
-                <h3 className="text-xl font-semibold mb-4">실시간 변환</h3>
+                <h3 className="text-xl font-semibold mb-4">{t.features.realtime.title}</h3>
                 <p className="text-muted-foreground">
-                  숫자를 입력하는 즉시 결과를 확인할 수 있습니다.
+                  {t.features.realtime.description}
                 </p>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-4">다크 모드</h3>
+                <h3 className="text-xl font-semibold mb-4">{t.features.darkMode.title}</h3>
                 <p className="text-muted-foreground">
-                  눈이 편한 다크 모드를 지원합니다.
+                  {t.features.darkMode.description}
                 </p>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-4">모바일 최적화</h3>
+                <h3 className="text-xl font-semibold mb-4">{t.features.mobile.title}</h3>
                 <p className="text-muted-foreground">
-                  모든 기기에서 완벽하게 작동합니다.
+                  {t.features.mobile.description}
                 </p>
               </div>
             </div>

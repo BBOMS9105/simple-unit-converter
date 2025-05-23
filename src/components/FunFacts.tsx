@@ -3,194 +3,16 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useRouter } from 'next/navigation'
-
-const funFacts = [
-  {
-    fact: "에미넴 주연 영화 '8마일'은",
-    value: "12.87 km",
-    description: "입니다 🎬",
-    category: "length",
-    fromUnit: "mile",
-    fromValue: "8",
-    toUnit: "kilometer"
-  },
-  {
-    fact: "엠파이어 스테이트 빌딩의 높이는",
-    value: "381 m",
-    description: "입니다 🏢",
-    category: "length",
-    fromUnit: "meter",
-    fromValue: "381",
-    toUnit: "foot"
-  },
-  {
-    fact: "축구장 길이는 보통",
-    value: "100-110 m",
-    description: "입니다 ⚽",
-    category: "length",
-    fromUnit: "meter",
-    fromValue: "105",
-    toUnit: "yard"
-  },
-  {
-    fact: "인간의 평균 걸음속도는",
-    value: "5 km/h",
-    description: "입니다 🚶",
-    category: "speed",
-    fromUnit: "kilometer_per_hour",
-    fromValue: "5",
-    toUnit: "mile_per_hour"
-  },
-  {
-    fact: "빛의 속도는",
-    value: "299,792,458 m/s",
-    description: "입니다 ⚡",
-    category: "speed",
-    fromUnit: "meter_per_second",
-    fromValue: "299792458",
-    toUnit: "kilometer_per_hour"
-  },
-  {
-    fact: "에베레스트 산의 높이는",
-    value: "8,848.86 m",
-    description: "입니다 🏔️",
-    category: "length",
-    fromUnit: "meter",
-    fromValue: "8848.86",
-    toUnit: "foot"
-  },
-  {
-    fact: "타이타닉호의 길이는",
-    value: "269 m",
-    description: "였습니다 🚢",
-    category: "length",
-    fromUnit: "meter",
-    fromValue: "269",
-    toUnit: "foot"
-  },
-  {
-    fact: "일반 책 한 권의 무게는",
-    value: "200-400 g",
-    description: "정도입니다 📚",
-    category: "weight",
-    fromUnit: "gram",
-    fromValue: "300",
-    toUnit: "ounce"
-  },
-  {
-    fact: "성인 남성의 평균 체중은",
-    value: "70 kg",
-    description: "정도입니다 👨",
-    category: "weight",
-    fromUnit: "kilogram",
-    fromValue: "70",
-    toUnit: "pound"
-  },
-  {
-    fact: "물 1리터의 무게는",
-    value: "1 kg",
-    description: "입니다 💧",
-    category: "weight",
-    fromUnit: "kilogram",
-    fromValue: "1",
-    toUnit: "pound"
-  },
-  {
-    fact: "인간의 정상 체온은",
-    value: "36.5°C",
-    description: "입니다 🌡️",
-    category: "temperature",
-    fromUnit: "celsius",
-    fromValue: "36.5",
-    toUnit: "fahrenheit"
-  },
-  {
-    fact: "물의 끓는점은",
-    value: "100°C",
-    description: "입니다 🔥",
-    category: "temperature",
-    fromUnit: "celsius",
-    fromValue: "100",
-    toUnit: "fahrenheit"
-  },
-  {
-    fact: "하루는",
-    value: "1,440분",
-    description: "입니다 📅",
-    category: "time",
-    fromUnit: "day",
-    fromValue: "1",
-    toUnit: "minute"
-  },
-  {
-    fact: "일 년은",
-    value: "8,760시간",
-    description: "입니다 🗓️",
-    category: "time",
-    fromUnit: "year",
-    fromValue: "1",
-    toUnit: "hour"
-  },
-  {
-    fact: "DVD 한 장의 용량은",
-    value: "4.7 GB",
-    description: "입니다 💿",
-    category: "data",
-    fromUnit: "gigabyte",
-    fromValue: "4.7",
-    toUnit: "megabyte"
-  },
-  {
-    fact: "블루레이 디스크의 용량은",
-    value: "25-50 GB",
-    description: "입니다 💽",
-    category: "data",
-    fromUnit: "gigabyte",
-    fromValue: "25",
-    toUnit: "gibibyte"
-  },
-  {
-    fact: "마라톤 풀코스 거리는",
-    value: "42.195 km",
-    description: "입니다 🏃‍♂️",
-    category: "length",
-    fromUnit: "kilometer",
-    fromValue: "42.195",
-    toUnit: "mile"
-  },
-  {
-    fact: "지구의 둘레는",
-    value: "40,075 km",
-    description: "입니다 🌍",
-    category: "length",
-    fromUnit: "kilometer",
-    fromValue: "40075",
-    toUnit: "mile"
-  },
-  {
-    fact: "대기압은",
-    value: "101.325 kPa",
-    description: "입니다 🌪️",
-    category: "pressure",
-    fromUnit: "kilopascal",
-    fromValue: "101.325",
-    toUnit: "atmosphere"
-  },
-  {
-    fact: "바나나 한 개의 칼로리는",
-    value: "89 kcal",
-    description: "정도입니다 🍌",
-    category: "energy",
-    fromUnit: "kilocalorie",
-    fromValue: "89",
-    toUnit: "joule"
-  }
-]
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export function FunFacts() {
   const [currentFactIndex, setCurrentFactIndex] = useState(0)
   const [isMounted, setIsMounted] = useState(false)
   const router = useRouter()
+  const { t } = useLanguage()
+
+  // 번역된 재밌는 사실들
+  const funFacts = t.funFacts.facts
 
   useEffect(() => {
     setIsMounted(true)
@@ -217,7 +39,7 @@ export function FunFacts() {
             <span className="text-foreground">{funFacts[0].description}</span>
           </p>
           <p className="text-sm text-muted-foreground mt-2">
-            클릭하여 변환해보기 →
+            {t.funFacts.clickToConvert}
           </p>
         </div>
       </div>
@@ -254,7 +76,7 @@ export function FunFacts() {
             <span className="text-foreground">{currentFact.description}</span>
           </p>
           <p className="text-sm text-muted-foreground mt-2">
-            클릭하여 변환해보기 →
+            {t.funFacts.clickToConvert}
           </p>
         </motion.div>
       </AnimatePresence>
