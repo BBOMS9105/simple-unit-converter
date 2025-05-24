@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import dynamic from "next/dynamic"
-import { ArrowRight, Calculator, Ruler, Weight, Thermometer, Clock, HardDrive } from "lucide-react"
+import { ArrowRight, Calculator, Ruler, Weight, Thermometer, Clock, HardDrive, Zap, Square, Gauge, Flame, Beaker } from "lucide-react"
 import { useLanguage } from "@/contexts/LanguageContext"
 
 const FunFacts = dynamic(() => import("@/components/FunFacts").then(mod => ({ default: mod.FunFacts })), {
@@ -40,7 +40,7 @@ export default function Home() {
     {
       name: t.categories.volume.name,
       description: t.categories.volume.description,
-      icon: HardDrive,
+      icon: Beaker,
       href: "/volume",
       color: "text-cyan-500",
     },
@@ -68,28 +68,28 @@ export default function Home() {
     {
       name: t.categories.speed.name,
       description: t.categories.speed.description,
-      icon: HardDrive,
+      icon: Zap,
       href: "/speed",
       color: "text-yellow-500",
     },
     {
       name: t.categories.area.name,
       description: t.categories.area.description,
-      icon: HardDrive,
+      icon: Square,
       href: "/area",
       color: "text-pink-500",
     },
     {
       name: t.categories.pressure.name,
       description: t.categories.pressure.description,
-      icon: HardDrive,
+      icon: Gauge,
       href: "/pressure",
       color: "text-indigo-500",
     },
     {
       name: t.categories.energy.name,
       description: t.categories.energy.description,
-      icon: HardDrive,
+      icon: Flame,
       href: "/energy",
       color: "text-emerald-500",
     },
