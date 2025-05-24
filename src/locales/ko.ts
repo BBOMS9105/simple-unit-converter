@@ -112,26 +112,10 @@ export const ko = {
     goHome: '홈으로 돌아가기'
   },
 
-  // 특징
-  features: {
-    title: '주요 특징',
-    realtime: {
-      title: '실시간 변환',
-      description: '숫자를 입력하는 즉시 결과를 확인할 수 있습니다.'
-    },
-    darkMode: {
-      title: '다크 모드',
-      description: '눈이 편한 다크 모드를 지원합니다.'
-    },
-    mobile: {
-      title: '모바일 최적화',
-      description: '모든 기기에서 완벽하게 작동합니다.'
-    }
-  },
+
 
   // 푸터
   footer: {
-    madeWith: '❤️로 제작',
     openSource: 'GitHub에서 소스 보기'
   },
 

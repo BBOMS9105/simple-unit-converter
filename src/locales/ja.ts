@@ -124,28 +124,11 @@ export const ja = {
     goHome: 'ホームに戻る'
   },
 
-  // 특징
-  features: {
-    title: '主な特徴',
-    realtime: {
-      title: 'リアルタイム変換',
-      description: '入力と同時に結果を確認できます。'
-    },
-    darkMode: {
-      title: 'ダークモード',
-      description: '目に優しいダークモードをサポート。'
-    },
-    mobile: {
-      title: 'モバイル最適化',
-      description: 'すべてのデバイスで完璧に動作します。'
-    }
-  },
+
 
   // 푸터
   footer: {
-    madeWith: '❤️で作成',
-    openSource: 'GitHubでソースを見る',
-    disclaimer: 'このコンバーターは情報提供のみを目的としており、正確性を保証するものではありません。重要な計算には専門ツールをご使用ください。'
+    openSource: 'GitHubでソースを見る'
   },
 
   // 재밌는 사실

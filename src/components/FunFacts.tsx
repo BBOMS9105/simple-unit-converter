@@ -370,30 +370,29 @@ const funFacts = [
 
 export function FunFacts() {
   const [currentFactIndex, setCurrentFactIndex] = useState(0)
-  const [randomizedFacts, setRandomizedFacts] = useState<typeof funFacts>([])
   const [isMounted, setIsMounted] = useState(false)
   const router = useRouter()
   const { t } = useLanguage()
 
-  // 팩트 배열을 랜덤하게 섞기
+  // 클라이언트에서만 랜덤 시작 인덱스 설정
   useEffect(() => {
-    const shuffled = [...funFacts].sort(() => Math.random() - 0.5)
-    setRandomizedFacts(shuffled)
     setIsMounted(true)
+    // 마운트 후 랜덤 시작점 설정
+    setCurrentFactIndex(Math.floor(Math.random() * funFacts.length))
   }, [])
 
   useEffect(() => {
-    if (!isMounted || randomizedFacts.length === 0) return
+    if (!isMounted) return
     
     const interval = setInterval(() => {
-      setCurrentFactIndex((prev) => (prev + 1) % randomizedFacts.length)
+      setCurrentFactIndex((prev) => (prev + 1) % funFacts.length)
     }, 6000) // 6초마다 변경
 
     return () => clearInterval(interval)
-  }, [isMounted, randomizedFacts.length])
+  }, [isMounted])
 
   // 마운트되지 않았으면 첫 번째 fact만 보여줌 (Hydration mismatch 방지)
-  if (!isMounted || randomizedFacts.length === 0) {
+  if (!isMounted) {
     const firstFact = funFacts[0]
     const factData = t.funFacts.facts[firstFact.factKey as keyof typeof t.funFacts.facts]
     
@@ -413,7 +412,7 @@ export function FunFacts() {
     )
   }
 
-  const currentFact = randomizedFacts[currentFactIndex]
+  const currentFact = funFacts[currentFactIndex]
   const factData = t.funFacts.facts[currentFact.factKey as keyof typeof t.funFacts.facts]
 
   const handleFactClick = () => {

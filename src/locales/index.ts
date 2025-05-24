@@ -80,14 +80,8 @@ export type Translation = {
     notFound: string
     goHome: string
   }
-  features: {
-    title: string
-    realtime: { title: string; description: string }
-    darkMode: { title: string; description: string }
-    mobile: { title: string; description: string }
-  }
+
   footer: {
-    madeWith: string
     openSource: string
   }
   funFacts: {

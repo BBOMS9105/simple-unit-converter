@@ -112,26 +112,10 @@ export const en = {
     goHome: 'Go home'
   },
 
-  // 특징
-  features: {
-    title: 'Key Features',
-    realtime: {
-      title: 'Real-time Conversion',
-      description: 'See results instantly as you type.'
-    },
-    darkMode: {
-      title: 'Dark Mode',
-      description: 'Supports eye-friendly dark mode.'
-    },
-    mobile: {
-      title: 'Mobile Optimized',
-      description: 'Works perfectly on all devices.'
-    }
-  },
+
 
   // 푸터
   footer: {
-    madeWith: 'Made with ❤️',
     openSource: 'View source on GitHub'
   },
 

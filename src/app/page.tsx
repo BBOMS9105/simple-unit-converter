@@ -1,9 +1,23 @@
 'use client'
 
 import Link from "next/link"
+import dynamic from "next/dynamic"
 import { ArrowRight, Calculator, Ruler, Weight, Thermometer, Clock, HardDrive } from "lucide-react"
-import { FunFacts } from "@/components/FunFacts"
 import { useLanguage } from "@/contexts/LanguageContext"
+
+const FunFacts = dynamic(() => import("@/components/FunFacts").then(mod => ({ default: mod.FunFacts })), {
+  ssr: false,
+  loading: () => (
+    <div className="text-center py-4">
+      <div className="bg-muted/30 rounded-lg p-4 max-w-2xl mx-auto">
+        <div className="animate-pulse">
+          <div className="h-4 bg-muted rounded w-3/4 mx-auto mb-2"></div>
+          <div className="h-4 bg-muted rounded w-1/2 mx-auto"></div>
+        </div>
+      </div>
+    </div>
+  )
+})
 
 export default function Home() {
   const { t, locale } = useLanguage()
@@ -161,32 +175,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Features Section */}
-        <section className="py-12 bg-muted/50 rounded-lg">
-          <div className="max-w-4xl mx-auto text-center px-6">
-            <h2 className="text-3xl font-bold mb-8">{t.features.title}</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div>
-                <h3 className="text-xl font-semibold mb-4">{t.features.realtime.title}</h3>
-                <p className="text-muted-foreground">
-                  {t.features.realtime.description}
-                </p>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-4">{t.features.darkMode.title}</h3>
-                <p className="text-muted-foreground">
-                  {t.features.darkMode.description}
-                </p>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-4">{t.features.mobile.title}</h3>
-                <p className="text-muted-foreground">
-                  {t.features.mobile.description}
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+
       </div>
     </>
   )

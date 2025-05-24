@@ -107,28 +107,11 @@ export const es = {
     goHome: 'Volver al inicio'
   },
 
-  // 특징
-  features: {
-    title: 'Características Principales',
-    realtime: {
-      title: 'Conversión en Tiempo Real',
-      description: 'Ve los resultados instantáneamente mientras escribes.'
-    },
-    darkMode: {
-      title: 'Modo Oscuro',
-      description: 'Soporte para modo oscuro amigable con la vista.'
-    },
-    mobile: {
-      title: 'Optimizado para Móviles',
-      description: 'Funciona perfectamente en todos los dispositivos.'
-    }
-  },
+
 
   // 푸터
   footer: {
-    madeWith: 'Hecho con ❤️',
-    openSource: 'Ver código en GitHub',
-    disclaimer: 'Este convertidor es solo para fines informativos y no se garantiza la precisión. Por favor, use herramientas profesionales para cálculos críticos.'
+    openSource: 'Ver código en GitHub'
   },
 
   // 재밌는 사실
