@@ -134,53 +134,65 @@ export const es = {
   // 재밌는 사실
   funFacts: {
     clickToConvert: 'Haz clic para convertir →',
-    facts: [
-      {
-        fact: "La película '8 Millas' de Eminem es",
-        value: "12.87 km",
-        description: "🎬",
-        category: "length",
-        fromUnit: "mile",
-        fromValue: "8",
-        toUnit: "kilometer"
-      },
-      {
-        fact: "La altura del Empire State Building es",
-        value: "381 m",
-        description: "🏢",
-        category: "length",
-        fromUnit: "meter",
-        fromValue: "381",
-        toUnit: "foot"
-      },
-      {
-        fact: "La longitud del campo de fútbol es usualmente",
-        value: "100-110 m",
-        description: "⚽",
-        category: "length",
-        fromUnit: "meter",
-        fromValue: "105",
-        toUnit: "yard"
-      },
-      {
-        fact: "La velocidad promedio de caminar es",
-        value: "5 km/h",
-        description: "🚶",
-        category: "speed",
-        fromUnit: "kilometer_per_hour",
-        fromValue: "5",
-        toUnit: "mile_per_hour"
-      },
-      {
-        fact: "La velocidad de la luz es",
-        value: "299,792,458 m/s",
-        description: "⚡",
-        category: "speed",
-        fromUnit: "meter_per_second",
-        fromValue: "299792458",
-        toUnit: "kilometer_per_hour"
-      }
-    ]
+    facts: {
+      eightMile: { fact: "La película '8 Millas' de Eminem es", value: "12.87 km", description: "🎬" },
+      empireState: { fact: "La altura del Empire State Building es", value: "381 m", description: "🏢" },
+      soccerField: { fact: "La longitud del campo de fútbol es usualmente", value: "100-110 m", description: "⚽" },
+      everest: { fact: "La altura del Monte Everest es", value: "8,848.86 m", description: "🏔️" },
+      titanic: { fact: "La longitud del Titanic era", value: "269 m", description: "🚢" },
+      marathon: { fact: "La distancia del maratón es", value: "42.195 km", description: "🏃‍♂️" },
+      earthCircumference: { fact: "La circunferencia de la Tierra es", value: "40,075 km", description: "🌍" },
+      greatWall: { fact: "La longitud total de la Gran Muralla es", value: "21,196 km", description: "🏯" },
+      burjKhalifa: { fact: "La altura del Burj Khalifa es", value: "828 m", description: "🏗️" },
+      goldenGate: { fact: "La longitud del Golden Gate es", value: "2,737 m", description: "🌉" },
+      basketballCourt: { fact: "La longitud de una cancha de baloncesto es", value: "28 m", description: "🏀" },
+      tennisNet: { fact: "La altura de la red de tenis es", value: "0.914 m", description: "🎾" },
+      
+      book: { fact: "El peso promedio de un libro es", value: "200-400 g", description: "📚" },
+      averageMale: { fact: "El peso promedio de un hombre adulto es", value: "70 kg", description: "👨" },
+      waterLiter: { fact: "Un litro de agua pesa", value: "1 kg", description: "💧" },
+      elephant: { fact: "Un elefante africano pesa", value: "6,000 kg", description: "🐘" },
+      blueWhale: { fact: "Una ballena azul pesa", value: "150,000 kg", description: "🐋" },
+      smartphone: { fact: "Un smartphone promedio pesa", value: "200 g", description: "📱" },
+      penny: { fact: "Una moneda de centavo de EE.UU. pesa", value: "2.5 g", description: "🪙" },
+      car: { fact: "Un automóvil promedio pesa", value: "1,500 kg", description: "🚗" },
+      feather: { fact: "Una pluma pesa", value: "0.62 g", description: "🪶" },
+      
+      walkingSpeed: { fact: "La velocidad promedio de caminar es", value: "5 km/h", description: "🚶" },
+      lightSpeed: { fact: "La velocidad de la luz es", value: "299,792,458 m/s", description: "⚡" },
+      cheetah: { fact: "La velocidad máxima de un guepardo es", value: "120 km/h", description: "🐆" },
+      soundSpeed: { fact: "La velocidad del sonido es", value: "343 m/s", description: "🔊" },
+      usainBolt: { fact: "La velocidad máxima de Usain Bolt fue", value: "37.58 km/h", description: "🏃‍♂️" },
+      airplane: { fact: "La velocidad de un avión comercial es", value: "900 km/h", description: "✈️" },
+      
+      bodyTemp: { fact: "La temperatura corporal normal es", value: "36.5°C", description: "🌡️" },
+      boilingPoint: { fact: "El punto de ebullición del agua es", value: "100°C", description: "🔥" },
+      freezingPoint: { fact: "El punto de congelación del agua es", value: "0°C", description: "🧊" },
+      sunSurface: { fact: "La temperatura de la superficie del Sol es", value: "5,778°C", description: "☀️" },
+      absoluteZero: { fact: "El cero absoluto es", value: "-273.15°C", description: "🥶" },
+      
+      day: { fact: "Un día tiene", value: "1,440 minutos", description: "📅" },
+      year: { fact: "Un año tiene", value: "8,760 horas", description: "🗓️" },
+      heartbeat: { fact: "Un latido del corazón dura", value: "1 segundo", description: "💓" },
+      blink: { fact: "Un parpadeo dura", value: "300 ms", description: "👁️" },
+      
+      dvd: { fact: "La capacidad de un DVD es", value: "4.7 GB", description: "💿" },
+      bluray: { fact: "La capacidad de un Blu-ray es", value: "25-50 GB", description: "💽" },
+      floppy: { fact: "La capacidad de un disquete era", value: "1.44 MB", description: "💾" },
+      humanBrain: { fact: "La capacidad de almacenamiento del cerebro humano es", value: "2.5 TB", description: "🧠" },
+      internetMinute: { fact: "Los datos generados por minuto en Internet son", value: "2.9 PB", description: "🌐" },
+      
+      atmosphere: { fact: "La presión atmosférica es", value: "101.325 kPa", description: "🌪️" },
+      carTire: { fact: "La presión de un neumático de automóvil es", value: "32 psi", description: "🚗" },
+      
+      banana: { fact: "Una banana tiene", value: "89 kcal", description: "🍌" },
+      lightning: { fact: "La energía de un rayo es", value: "1.4 kWh", description: "⚡" },
+      household: { fact: "El consumo diario de energía doméstica es", value: "30 kWh", description: "🏠" },
+      
+      creditCard: { fact: "El área de una tarjeta de crédito es", value: "46 cm²", description: "💳" },
+      footballField: { fact: "El área de un campo de fútbol americano es", value: "0.714 hectáreas", description: "🏈" },
+      centralPark: { fact: "El área de Central Park es", value: "341 hectáreas", description: "🌳" }
+    }
   },
 
   // 단위 이름 번역

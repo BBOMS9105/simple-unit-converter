@@ -13,18 +13,6 @@ export const en = {
     more: 'More'
   },
 
-  // 빠른 변환 바로가기
-  quickConverters: {
-    title: 'Quick Convert',
-    cmToInch: 'cm → inch',
-    kgToLb: 'kg → pound',
-    celsiusToFahrenheit: '°C → °F',
-    literToGallon: 'liter → gallon',
-    kmToMile: 'km → mile',
-    meterToFoot: 'meter → foot',
-    viewAll: 'View All Converters'
-  },
-
   // 카테고리
   categories: {
     title: 'Conversion Categories',
@@ -144,294 +132,71 @@ export const en = {
   // 푸터
   footer: {
     madeWith: 'Made with ❤️',
-    openSource: 'View source on GitHub',
-    disclaimer: 'This converter is for informational purposes only and accuracy is not guaranteed. Please use professional tools for critical calculations.'
+    openSource: 'View source on GitHub'
   },
 
   // 재밌는 사실
   funFacts: {
     clickToConvert: 'Click to convert →',
-    facts: [
-      {
-        fact: "Eminem's movie '8 Mile' is",
-        value: "12.87 km",
-        description: "🎬",
-        category: "length",
-        fromUnit: "mile",
-        fromValue: "8",
-        toUnit: "kilometer"
-      },
-      {
-        fact: "Empire State Building's height is",
-        value: "381 m",
-        description: "🏢",
-        category: "length",
-        fromUnit: "meter",
-        fromValue: "381",
-        toUnit: "foot"
-      },
-      {
-        fact: "Soccer field length is usually",
-        value: "100-110 m",
-        description: "⚽",
-        category: "length",
-        fromUnit: "meter",
-        fromValue: "105",
-        toUnit: "yard"
-      },
-      {
-        fact: "Average human walking speed is",
-        value: "5 km/h",
-        description: "🚶",
-        category: "speed",
-        fromUnit: "kilometer_per_hour",
-        fromValue: "5",
-        toUnit: "mile_per_hour"
-      },
-      {
-        fact: "Speed of light is",
-        value: "299,792,458 m/s",
-        description: "⚡",
-        category: "speed",
-        fromUnit: "meter_per_second",
-        fromValue: "299792458",
-        toUnit: "kilometer_per_hour"
-      },
-      {
-        fact: "Mount Everest's height is",
-        value: "8,848.86 m",
-        description: "🏔️",
-        category: "length",
-        fromUnit: "meter",
-        fromValue: "8848.86",
-        toUnit: "foot"
-      },
-      {
-        fact: "Titanic's length was",
-        value: "269 m",
-        description: "🚢",
-        category: "length",
-        fromUnit: "meter",
-        fromValue: "269",
-        toUnit: "foot"
-      },
-      {
-        fact: "Average book weight is",
-        value: "200-400 g",
-        description: "📚",
-        category: "weight",
-        fromUnit: "gram",
-        fromValue: "300",
-        toUnit: "ounce"
-      },
-      {
-        fact: "Average adult male weight is",
-        value: "70 kg",
-        description: "👨",
-        category: "weight",
-        fromUnit: "kilogram",
-        fromValue: "70",
-        toUnit: "pound"
-      },
-      {
-        fact: "1 liter of water weighs",
-        value: "1 kg",
-        description: "💧",
-        category: "weight",
-        fromUnit: "kilogram",
-        fromValue: "1",
-        toUnit: "pound"
-      },
-      {
-        fact: "iPhone 15 Pro weighs",
-        value: "187 g",
-        description: "📱",
-        category: "weight",
-        fromUnit: "gram",
-        fromValue: "187",
-        toUnit: "ounce"
-      },
-      {
-        fact: "Statue of Liberty's height is",
-        value: "93 m",
-        description: "🗽",
-        category: "length",
-        fromUnit: "meter",
-        fromValue: "93",
-        toUnit: "foot"
-      },
-      {
-        fact: "Eiffel Tower's height is",
-        value: "330 m",
-        description: "🗼",
-        category: "length",
-        fromUnit: "meter",
-        fromValue: "330",
-        toUnit: "foot"
-      },
-      {
-        fact: "Tennis ball weighs",
-        value: "57-58 g",
-        description: "🎾",
-        category: "weight",
-        fromUnit: "gram",
-        fromValue: "57.5",
-        toUnit: "ounce"
-      },
-      {
-        fact: "Normal human body temperature is",
-        value: "36.5°C",
-        description: "🌡️",
-        category: "temperature",
-        fromUnit: "celsius",
-        fromValue: "36.5",
-        toUnit: "fahrenheit"
-      },
-      {
-        fact: "Water boiling point is",
-        value: "100°C",
-        description: "🔥",
-        category: "temperature",
-        fromUnit: "celsius",
-        fromValue: "100",
-        toUnit: "fahrenheit"
-      },
-      {
-        fact: "Absolute zero is",
-        value: "-273.15°C",
-        description: "🧊",
-        category: "temperature",
-        fromUnit: "celsius",
-        fromValue: "-273.15",
-        toUnit: "kelvin"
-      },
-      {
-        fact: "One day is",
-        value: "1,440 minutes",
-        description: "📅",
-        category: "time",
-        fromUnit: "day",
-        fromValue: "1",
-        toUnit: "minute"
-      },
-      {
-        fact: "One year is",
-        value: "8,760 hours",
-        description: "🗓️",
-        category: "time",
-        fromUnit: "year",
-        fromValue: "1",
-        toUnit: "hour"
-      },
-      {
-        fact: "One hour is",
-        value: "3,600 seconds",
-        description: "⏱️",
-        category: "time",
-        fromUnit: "hour",
-        fromValue: "1",
-        toUnit: "second"
-      },
-      {
-        fact: "DVD capacity is",
-        value: "4.7 GB",
-        description: "💿",
-        category: "data",
-        fromUnit: "gigabyte",
-        fromValue: "4.7",
-        toUnit: "megabyte"
-      },
-      {
-        fact: "Blu-ray disc capacity is",
-        value: "25-50 GB",
-        description: "💽",
-        category: "data",
-        fromUnit: "gigabyte",
-        fromValue: "25",
-        toUnit: "gibibyte"
-      },
-      {
-        fact: "4K movie file is usually",
-        value: "25-100 GB",
-        description: "🎬",
-        category: "data",
-        fromUnit: "gigabyte",
-        fromValue: "50",
-        toUnit: "terabyte"
-      },
-      {
-        fact: "Marathon distance is",
-        value: "42.195 km",
-        description: "🏃‍♂️",
-        category: "length",
-        fromUnit: "kilometer",
-        fromValue: "42.195",
-        toUnit: "mile"
-      },
-      {
-        fact: "Earth's circumference is",
-        value: "40,075 km",
-        description: "🌍",
-        category: "length",
-        fromUnit: "kilometer",
-        fromValue: "40075",
-        toUnit: "mile"
-      },
-      {
-        fact: "Distance to the moon is",
-        value: "384,400 km",
-        description: "🌙",
-        category: "length",
-        fromUnit: "kilometer",
-        fromValue: "384400",
-        toUnit: "mile"
-      },
-      {
-        fact: "Atmospheric pressure is",
-        value: "101.325 kPa",
-        description: "🌪️",
-        category: "pressure",
-        fromUnit: "kilopascal",
-        fromValue: "101.325",
-        toUnit: "atmosphere"
-      },
-      {
-        fact: "One banana contains",
-        value: "89 kcal",
-        description: "🍌",
-        category: "energy",
-        fromUnit: "kilocalorie",
-        fromValue: "89",
-        toUnit: "joule"
-      },
-      {
-        fact: "Cheetah's top speed is",
-        value: "120 km/h",
-        description: "🐆",
-        category: "speed",
-        fromUnit: "kilometer_per_hour",
-        fromValue: "120",
-        toUnit: "mile_per_hour"
-      },
-      {
-        fact: "Speed of sound is",
-        value: "343 m/s",
-        description: "🔊",
-        category: "speed",
-        fromUnit: "meter_per_second",
-        fromValue: "343",
-        toUnit: "kilometer_per_hour"
-      },
-      {
-        fact: "F1 car's top speed is",
-        value: "372 km/h",
-        description: "🏎️",
-        category: "speed",
-        fromUnit: "kilometer_per_hour",
-        fromValue: "372",
-        toUnit: "mile_per_hour"
-      }
-    ]
+    facts: {
+      eightMile: { fact: "Eminem's movie '8 Mile' is", value: "12.87 km", description: "🎬" },
+      empireState: { fact: "Empire State Building height is", value: "381 m", description: "🏢" },
+      soccerField: { fact: "Soccer field length is usually", value: "100-110 m", description: "⚽" },
+      everest: { fact: "Mount Everest height is", value: "8,848.86 m", description: "🏔️" },
+      titanic: { fact: "Titanic length was", value: "269 m", description: "🚢" },
+      marathon: { fact: "Marathon distance is", value: "42.195 km", description: "🏃‍♂️" },
+      earthCircumference: { fact: "Earth's circumference is", value: "40,075 km", description: "🌍" },
+      greatWall: { fact: "Great Wall total length is", value: "21,196 km", description: "🏯" },
+      burjKhalifa: { fact: "Burj Khalifa height is", value: "828 m", description: "🏗️" },
+      goldenGate: { fact: "Golden Gate Bridge length is", value: "2,737 m", description: "🌉" },
+      basketballCourt: { fact: "Basketball court length is", value: "28 m", description: "🏀" },
+      tennisNet: { fact: "Tennis net height is", value: "0.914 m", description: "🎾" },
+      
+      book: { fact: "Average book weight is", value: "200-400 g", description: "📚" },
+      averageMale: { fact: "Average male weight is", value: "70 kg", description: "👨" },
+      waterLiter: { fact: "One liter of water weighs", value: "1 kg", description: "💧" },
+      elephant: { fact: "African elephant weighs", value: "6,000 kg", description: "🐘" },
+      blueWhale: { fact: "Blue whale weighs", value: "150,000 kg", description: "🐋" },
+      smartphone: { fact: "Average smartphone weighs", value: "200 g", description: "📱" },
+      penny: { fact: "US penny weighs", value: "2.5 g", description: "🪙" },
+      car: { fact: "Average car weighs", value: "1,500 kg", description: "🚗" },
+      feather: { fact: "A feather weighs", value: "0.62 g", description: "🪶" },
+      
+      walkingSpeed: { fact: "Average walking speed is", value: "5 km/h", description: "🚶" },
+      lightSpeed: { fact: "Speed of light is", value: "299,792,458 m/s", description: "⚡" },
+      cheetah: { fact: "Cheetah top speed is", value: "120 km/h", description: "🐆" },
+      soundSpeed: { fact: "Speed of sound is", value: "343 m/s", description: "🔊" },
+      usainBolt: { fact: "Usain Bolt's top speed was", value: "37.58 km/h", description: "🏃‍♂️" },
+      airplane: { fact: "Commercial airplane speed is", value: "900 km/h", description: "✈️" },
+      
+      bodyTemp: { fact: "Normal body temperature is", value: "36.5°C", description: "🌡️" },
+      boilingPoint: { fact: "Water boiling point is", value: "100°C", description: "🔥" },
+      freezingPoint: { fact: "Water freezing point is", value: "0°C", description: "🧊" },
+      sunSurface: { fact: "Sun surface temperature is", value: "5,778°C", description: "☀️" },
+      absoluteZero: { fact: "Absolute zero is", value: "-273.15°C", description: "🥶" },
+      
+      day: { fact: "One day is", value: "1,440 minutes", description: "📅" },
+      year: { fact: "One year is", value: "8,760 hours", description: "🗓️" },
+      heartbeat: { fact: "One heartbeat is", value: "1 second", description: "💓" },
+      blink: { fact: "Eye blink takes", value: "300 ms", description: "👁️" },
+      
+      dvd: { fact: "DVD capacity is", value: "4.7 GB", description: "💿" },
+      bluray: { fact: "Blu-ray capacity is", value: "25-50 GB", description: "💽" },
+      floppy: { fact: "Floppy disk capacity was", value: "1.44 MB", description: "💾" },
+      humanBrain: { fact: "Human brain storage is", value: "2.5 TB", description: "🧠" },
+      internetMinute: { fact: "Internet data per minute is", value: "2.9 PB", description: "🌐" },
+      
+      atmosphere: { fact: "Atmospheric pressure is", value: "101.325 kPa", description: "🌪️" },
+      carTire: { fact: "Car tire pressure is", value: "32 psi", description: "🚗" },
+      
+      banana: { fact: "One banana has", value: "89 kcal", description: "🍌" },
+      lightning: { fact: "Lightning energy is", value: "1.4 kWh", description: "⚡" },
+      household: { fact: "Daily household energy is", value: "30 kWh", description: "🏠" },
+      
+      creditCard: { fact: "Credit card area is", value: "46 cm²", description: "💳" },
+      footballField: { fact: "Football field area is", value: "0.714 hectares", description: "🏈" },
+      centralPark: { fact: "Central Park area is", value: "341 hectares", description: "🌳" }
+    }
   },
 
   // 단위 이름 번역

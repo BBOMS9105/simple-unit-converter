@@ -92,6 +92,13 @@ export type Translation = {
   }
   funFacts: {
     clickToConvert: string
+    facts: {
+      [key: string]: {
+        fact: string
+        value: string
+        description: string
+      }
+    }
   }
   units: {
     // Length units

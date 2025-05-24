@@ -13,18 +13,6 @@ export const ko = {
     more: '더보기'
   },
 
-  // 빠른 변환 바로가기
-  quickConverters: {
-    title: '빠른 변환',
-    cmToInch: 'cm → 인치',
-    kgToLb: 'kg → 파운드',
-    celsiusToFahrenheit: '°C → °F',
-    literToGallon: '리터 → 갤런',
-    kmToMile: 'km → 마일',
-    meterToFoot: '미터 → 피트',
-    viewAll: '모든 변환기 보기'
-  },
-
   // 카테고리
   categories: {
     title: '변환 카테고리',
@@ -144,294 +132,71 @@ export const ko = {
   // 푸터
   footer: {
     madeWith: '❤️로 제작',
-    openSource: 'GitHub에서 소스 보기',
-    disclaimer: '이 변환기는 정보 제공 목적으로만 사용되며, 정확성을 보장하지 않습니다. 중요한 계산은 전문 도구를 사용하시기 바랍니다.'
+    openSource: 'GitHub에서 소스 보기'
   },
 
   // 재밌는 사실
   funFacts: {
     clickToConvert: '클릭하여 변환해보기 →',
-    facts: [
-      {
-        fact: "에미넘 주연 영화 '8마일'은",
-        value: "12.87 km",
-        description: "입니다 🎬",
-        category: "length",
-        fromUnit: "mile",
-        fromValue: "8",
-        toUnit: "kilometer"
-      },
-      {
-        fact: "엠파이어 스테이트 빌딩의 높이는",
-        value: "381 m",
-        description: "입니다 🏢",
-        category: "length",
-        fromUnit: "meter",
-        fromValue: "381",
-        toUnit: "foot"
-      },
-      {
-        fact: "축구장 길이는 보통",
-        value: "100-110 m",
-        description: "입니다 ⚽",
-        category: "length",
-        fromUnit: "meter",
-        fromValue: "105",
-        toUnit: "yard"
-      },
-      {
-        fact: "인간의 평균 걸음속도는",
-        value: "5 km/h",
-        description: "입니다 🚶",
-        category: "speed",
-        fromUnit: "kilometer_per_hour",
-        fromValue: "5",
-        toUnit: "mile_per_hour"
-      },
-      {
-        fact: "빛의 속도는",
-        value: "299,792,458 m/s",
-        description: "입니다 ⚡",
-        category: "speed",
-        fromUnit: "meter_per_second",
-        fromValue: "299792458",
-        toUnit: "kilometer_per_hour"
-      },
-      {
-        fact: "에베레스트 산의 높이는",
-        value: "8,848.86 m",
-        description: "입니다 🏔️",
-        category: "length",
-        fromUnit: "meter",
-        fromValue: "8848.86",
-        toUnit: "foot"
-      },
-      {
-        fact: "타이타닉호의 길이는",
-        value: "269 m",
-        description: "였습니다 🚢",
-        category: "length",
-        fromUnit: "meter",
-        fromValue: "269",
-        toUnit: "foot"
-      },
-      {
-        fact: "일반 책 한 권의 무게는",
-        value: "200-400 g",
-        description: "정도입니다 📚",
-        category: "weight",
-        fromUnit: "gram",
-        fromValue: "300",
-        toUnit: "ounce"
-      },
-      {
-        fact: "성인 남성의 평균 체중은",
-        value: "70 kg",
-        description: "정도입니다 👨",
-        category: "weight",
-        fromUnit: "kilogram",
-        fromValue: "70",
-        toUnit: "pound"
-      },
-      {
-        fact: "물 1리터의 무게는",
-        value: "1 kg",
-        description: "입니다 💧",
-        category: "weight",
-        fromUnit: "kilogram",
-        fromValue: "1",
-        toUnit: "pound"
-      },
-      {
-        fact: "iPhone 15 Pro의 무게는",
-        value: "187 g",
-        description: "입니다 📱",
-        category: "weight",
-        fromUnit: "gram",
-        fromValue: "187",
-        toUnit: "ounce"
-      },
-      {
-        fact: "자유의 여신상 높이는",
-        value: "93 m",
-        description: "입니다 🗽",
-        category: "length",
-        fromUnit: "meter",
-        fromValue: "93",
-        toUnit: "foot"
-      },
-      {
-        fact: "파리 에펠탑의 높이는",
-        value: "330 m",
-        description: "입니다 🗼",
-        category: "length",
-        fromUnit: "meter",
-        fromValue: "330",
-        toUnit: "foot"
-      },
-      {
-        fact: "테니스공의 무게는",
-        value: "57-58 g",
-        description: "입니다 🎾",
-        category: "weight",
-        fromUnit: "gram",
-        fromValue: "57.5",
-        toUnit: "ounce"
-      },
-      {
-        fact: "인간의 정상 체온은",
-        value: "36.5°C",
-        description: "입니다 🌡️",
-        category: "temperature",
-        fromUnit: "celsius",
-        fromValue: "36.5",
-        toUnit: "fahrenheit"
-      },
-      {
-        fact: "물의 끓는점은",
-        value: "100°C",
-        description: "입니다 🔥",
-        category: "temperature",
-        fromUnit: "celsius",
-        fromValue: "100",
-        toUnit: "fahrenheit"
-      },
-      {
-        fact: "절대영도는",
-        value: "-273.15°C",
-        description: "입니다 🧊",
-        category: "temperature",
-        fromUnit: "celsius",
-        fromValue: "-273.15",
-        toUnit: "kelvin"
-      },
-      {
-        fact: "하루는",
-        value: "1,440분",
-        description: "입니다 📅",
-        category: "time",
-        fromUnit: "day",
-        fromValue: "1",
-        toUnit: "minute"
-      },
-      {
-        fact: "일 년은",
-        value: "8,760시간",
-        description: "입니다 🗓️",
-        category: "time",
-        fromUnit: "year",
-        fromValue: "1",
-        toUnit: "hour"
-      },
-      {
-        fact: "한 시간은",
-        value: "3,600초",
-        description: "입니다 ⏱️",
-        category: "time",
-        fromUnit: "hour",
-        fromValue: "1",
-        toUnit: "second"
-      },
-      {
-        fact: "DVD 한 장의 용량은",
-        value: "4.7 GB",
-        description: "입니다 💿",
-        category: "data",
-        fromUnit: "gigabyte",
-        fromValue: "4.7",
-        toUnit: "megabyte"
-      },
-      {
-        fact: "블루레이 디스크의 용량은",
-        value: "25-50 GB",
-        description: "입니다 💽",
-        category: "data",
-        fromUnit: "gigabyte",
-        fromValue: "25",
-        toUnit: "gibibyte"
-      },
-      {
-        fact: "4K 영화 파일은 보통",
-        value: "25-100 GB",
-        description: "입니다 🎬",
-        category: "data",
-        fromUnit: "gigabyte",
-        fromValue: "50",
-        toUnit: "terabyte"
-      },
-      {
-        fact: "마라톤 풀코스 거리는",
-        value: "42.195 km",
-        description: "입니다 🏃‍♂️",
-        category: "length",
-        fromUnit: "kilometer",
-        fromValue: "42.195",
-        toUnit: "mile"
-      },
-      {
-        fact: "지구의 둘레는",
-        value: "40,075 km",
-        description: "입니다 🌍",
-        category: "length",
-        fromUnit: "kilometer",
-        fromValue: "40075",
-        toUnit: "mile"
-      },
-      {
-        fact: "달까지의 거리는",
-        value: "384,400 km",
-        description: "입니다 🌙",
-        category: "length",
-        fromUnit: "kilometer",
-        fromValue: "384400",
-        toUnit: "mile"
-      },
-      {
-        fact: "대기압은",
-        value: "101.325 kPa",
-        description: "입니다 🌪️",
-        category: "pressure",
-        fromUnit: "kilopascal",
-        fromValue: "101.325",
-        toUnit: "atmosphere"
-      },
-      {
-        fact: "바나나 한 개의 칼로리는",
-        value: "89 kcal",
-        description: "정도입니다 🍌",
-        category: "energy",
-        fromUnit: "kilocalorie",
-        fromValue: "89",
-        toUnit: "joule"
-      },
-      {
-        fact: "치타의 최고 속도는",
-        value: "120 km/h",
-        description: "입니다 🐆",
-        category: "speed",
-        fromUnit: "kilometer_per_hour",
-        fromValue: "120",
-        toUnit: "mile_per_hour"
-      },
-      {
-        fact: "소리의 속도는",
-        value: "343 m/s",
-        description: "입니다 🔊",
-        category: "speed",
-        fromUnit: "meter_per_second",
-        fromValue: "343",
-        toUnit: "kilometer_per_hour"
-      },
-      {
-        fact: "F1 경주차의 최고속도는",
-        value: "372 km/h",
-        description: "입니다 🏎️",
-        category: "speed",
-        fromUnit: "kilometer_per_hour",
-        fromValue: "372",
-        toUnit: "mile_per_hour"
-      }
-    ]
+    facts: {
+      eightMile: { fact: "에미넘 주연 영화 '8마일'은", value: "12.87 km", description: "입니다 🎬" },
+      empireState: { fact: "엠파이어 스테이트 빌딩의 높이는", value: "381 m", description: "입니다 🏢" },
+      soccerField: { fact: "축구장 길이는 보통", value: "100-110 m", description: "입니다 ⚽" },
+      everest: { fact: "에베레스트 산의 높이는", value: "8,848.86 m", description: "입니다 🏔️" },
+      titanic: { fact: "타이타닉호의 길이는", value: "269 m", description: "였습니다 🚢" },
+      marathon: { fact: "마라톤 풀코스 거리는", value: "42.195 km", description: "입니다 🏃‍♂️" },
+      earthCircumference: { fact: "지구의 둘레는", value: "40,075 km", description: "입니다 🌍" },
+      greatWall: { fact: "만리장성의 총 길이는", value: "21,196 km", description: "입니다 🏯" },
+      burjKhalifa: { fact: "부르즈 할리파의 높이는", value: "828 m", description: "입니다 🏗️" },
+      goldenGate: { fact: "골든게이트 브릿지의 길이는", value: "2,737 m", description: "입니다 🌉" },
+      basketballCourt: { fact: "농구 코트의 길이는", value: "28 m", description: "입니다 🏀" },
+      tennisNet: { fact: "테니스 네트의 높이는", value: "0.914 m", description: "입니다 🎾" },
+      
+      book: { fact: "일반 책 한 권의 무게는", value: "200-400 g", description: "정도입니다 📚" },
+      averageMale: { fact: "성인 남성의 평균 체중은", value: "70 kg", description: "정도입니다 👨" },
+      waterLiter: { fact: "물 1리터의 무게는", value: "1 kg", description: "입니다 💧" },
+      elephant: { fact: "아프리카 코끼리의 무게는", value: "6,000 kg", description: "정도입니다 🐘" },
+      blueWhale: { fact: "대왕고래의 무게는", value: "150,000 kg", description: "정도입니다 🐋" },
+      smartphone: { fact: "스마트폰의 평균 무게는", value: "200 g", description: "정도입니다 📱" },
+      penny: { fact: "미국 1센트 동전의 무게는", value: "2.5 g", description: "입니다 🪙" },
+      car: { fact: "일반 승용차의 무게는", value: "1,500 kg", description: "정도입니다 🚗" },
+      feather: { fact: "깃털 하나의 무게는", value: "0.62 g", description: "정도입니다 🪶" },
+      
+      walkingSpeed: { fact: "인간의 평균 걸음속도는", value: "5 km/h", description: "입니다 🚶" },
+      lightSpeed: { fact: "빛의 속도는", value: "299,792,458 m/s", description: "입니다 ⚡" },
+      cheetah: { fact: "치타의 최고 속도는", value: "120 km/h", description: "입니다 🐆" },
+      soundSpeed: { fact: "소리의 속도는", value: "343 m/s", description: "입니다 🔊" },
+      usainBolt: { fact: "우사인 볼트의 최고 속도는", value: "37.58 km/h", description: "였습니다 🏃‍♂️" },
+      airplane: { fact: "여객기의 평균 속도는", value: "900 km/h", description: "입니다 ✈️" },
+      
+      bodyTemp: { fact: "인간의 정상 체온은", value: "36.5°C", description: "입니다 🌡️" },
+      boilingPoint: { fact: "물의 끓는점은", value: "100°C", description: "입니다 🔥" },
+      freezingPoint: { fact: "물의 어는점은", value: "0°C", description: "입니다 🧊" },
+      sunSurface: { fact: "태양 표면의 온도는", value: "5,778°C", description: "입니다 ☀️" },
+      absoluteZero: { fact: "절대영도는", value: "-273.15°C", description: "입니다 🥶" },
+      
+      day: { fact: "하루는", value: "1,440분", description: "입니다 📅" },
+      year: { fact: "일 년은", value: "8,760시간", description: "입니다 🗓️" },
+      heartbeat: { fact: "심장 박동 한 번은", value: "1초", description: "정도입니다 💓" },
+      blink: { fact: "눈 깜빡임은", value: "300ms", description: "정도입니다 👁️" },
+      
+      dvd: { fact: "DVD 한 장의 용량은", value: "4.7 GB", description: "입니다 💿" },
+      bluray: { fact: "블루레이 디스크의 용량은", value: "25-50 GB", description: "입니다 💽" },
+      floppy: { fact: "플로피 디스크의 용량은", value: "1.44 MB", description: "였습니다 💾" },
+      humanBrain: { fact: "인간 뇌의 저장 용량은", value: "2.5 TB", description: "정도입니다 🧠" },
+      internetMinute: { fact: "인터넷에서 1분간 생성되는 데이터는", value: "2.9 PB", description: "입니다 🌐" },
+      
+      atmosphere: { fact: "대기압은", value: "101.325 kPa", description: "입니다 🌪️" },
+      carTire: { fact: "자동차 타이어 압력은", value: "32 psi", description: "정도입니다 🚗" },
+      
+      banana: { fact: "바나나 한 개의 칼로리는", value: "89 kcal", description: "정도입니다 🍌" },
+      lightning: { fact: "번개 한 번의 에너지는", value: "1.4 kWh", description: "정도입니다 ⚡" },
+      household: { fact: "가정의 하루 전력 사용량은", value: "30 kWh", description: "정도입니다 🏠" },
+      
+      creditCard: { fact: "신용카드의 면적은", value: "46 cm²", description: "입니다 💳" },
+      footballField: { fact: "미식축구장의 면적은", value: "0.714 헥타르", description: "입니다 🏈" },
+      centralPark: { fact: "센트럴 파크의 면적은", value: "341 헥타르", description: "입니다 🌳" }
+    }
   },
 
   // 단위 이름 번역

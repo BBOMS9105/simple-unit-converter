@@ -6,217 +6,404 @@ import { useRouter } from 'next/navigation'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 const funFacts = [
+  // 길이 관련
   {
-    fact: "에미넘 주연 영화 '8마일'은",
-    value: "12.87 km",
-    description: "입니다 🎬",
+    factKey: "eightMile",
     category: "length",
     fromUnit: "mile",
     fromValue: "8",
     toUnit: "kilometer"
   },
   {
-    fact: "엠파이어 스테이트 빌딩의 높이는",
-    value: "381 m",
-    description: "입니다 🏢",
+    factKey: "empireState",
     category: "length",
     fromUnit: "meter",
     fromValue: "381",
     toUnit: "foot"
   },
   {
-    fact: "축구장 길이는 보통",
-    value: "100-110 m",
-    description: "입니다 ⚽",
+    factKey: "soccerField",
     category: "length",
     fromUnit: "meter",
     fromValue: "105",
     toUnit: "yard"
   },
   {
-    fact: "인간의 평균 걸음속도는",
-    value: "5 km/h",
-    description: "입니다 🚶",
-    category: "speed",
-    fromUnit: "kilometer_per_hour",
-    fromValue: "5",
-    toUnit: "mile_per_hour"
-  },
-  {
-    fact: "빛의 속도는",
-    value: "299,792,458 m/s",
-    description: "입니다 ⚡",
-    category: "speed",
-    fromUnit: "meter_per_second",
-    fromValue: "299792458",
-    toUnit: "kilometer_per_hour"
-  },
-  {
-    fact: "에베레스트 산의 높이는",
-    value: "8,848.86 m",
-    description: "입니다 🏔️",
+    factKey: "everest",
     category: "length",
     fromUnit: "meter",
     fromValue: "8848.86",
     toUnit: "foot"
   },
   {
-    fact: "타이타닉호의 길이는",
-    value: "269 m",
-    description: "였습니다 🚢",
+    factKey: "titanic",
     category: "length",
     fromUnit: "meter",
     fromValue: "269",
     toUnit: "foot"
   },
   {
-    fact: "일반 책 한 권의 무게는",
-    value: "200-400 g",
-    description: "정도입니다 📚",
-    category: "weight",
-    fromUnit: "gram",
-    fromValue: "300",
-    toUnit: "ounce"
-  },
-  {
-    fact: "성인 남성의 평균 체중은",
-    value: "70 kg",
-    description: "정도입니다 👨",
-    category: "weight",
-    fromUnit: "kilogram",
-    fromValue: "70",
-    toUnit: "pound"
-  },
-  {
-    fact: "물 1리터의 무게는",
-    value: "1 kg",
-    description: "입니다 💧",
-    category: "weight",
-    fromUnit: "kilogram",
-    fromValue: "1",
-    toUnit: "pound"
-  },
-  {
-    fact: "인간의 정상 체온은",
-    value: "36.5°C",
-    description: "입니다 🌡️",
-    category: "temperature",
-    fromUnit: "celsius",
-    fromValue: "36.5",
-    toUnit: "fahrenheit"
-  },
-  {
-    fact: "물의 끓는점은",
-    value: "100°C",
-    description: "입니다 🔥",
-    category: "temperature",
-    fromUnit: "celsius",
-    fromValue: "100",
-    toUnit: "fahrenheit"
-  },
-  {
-    fact: "하루는",
-    value: "1,440분",
-    description: "입니다 📅",
-    category: "time",
-    fromUnit: "day",
-    fromValue: "1",
-    toUnit: "minute"
-  },
-  {
-    fact: "일 년은",
-    value: "8,760시간",
-    description: "입니다 🗓️",
-    category: "time",
-    fromUnit: "year",
-    fromValue: "1",
-    toUnit: "hour"
-  },
-  {
-    fact: "DVD 한 장의 용량은",
-    value: "4.7 GB",
-    description: "입니다 💿",
-    category: "data",
-    fromUnit: "gigabyte",
-    fromValue: "4.7",
-    toUnit: "megabyte"
-  },
-  {
-    fact: "블루레이 디스크의 용량은",
-    value: "25-50 GB",
-    description: "입니다 💽",
-    category: "data",
-    fromUnit: "gigabyte",
-    fromValue: "25",
-    toUnit: "gibibyte"
-  },
-  {
-    fact: "마라톤 풀코스 거리는",
-    value: "42.195 km",
-    description: "입니다 🏃‍♂️",
+    factKey: "marathon",
     category: "length",
     fromUnit: "kilometer",
     fromValue: "42.195",
     toUnit: "mile"
   },
   {
-    fact: "지구의 둘레는",
-    value: "40,075 km",
-    description: "입니다 🌍",
+    factKey: "earthCircumference",
     category: "length",
     fromUnit: "kilometer",
     fromValue: "40075",
     toUnit: "mile"
   },
   {
-    fact: "대기압은",
-    value: "101.325 kPa",
-    description: "입니다 🌪️",
+    factKey: "greatWall",
+    category: "length",
+    fromUnit: "kilometer",
+    fromValue: "21196",
+    toUnit: "mile"
+  },
+  {
+    factKey: "burjKhalifa",
+    category: "length",
+    fromUnit: "meter",
+    fromValue: "828",
+    toUnit: "foot"
+  },
+  {
+    factKey: "goldenGate",
+    category: "length",
+    fromUnit: "meter",
+    fromValue: "2737",
+    toUnit: "foot"
+  },
+  {
+    factKey: "basketballCourt",
+    category: "length",
+    fromUnit: "meter",
+    fromValue: "28",
+    toUnit: "foot"
+  },
+  {
+    factKey: "tennisNet",
+    category: "length",
+    fromUnit: "meter",
+    fromValue: "0.914",
+    toUnit: "foot"
+  },
+  
+  // 무게 관련
+  {
+    factKey: "book",
+    category: "weight",
+    fromUnit: "gram",
+    fromValue: "300",
+    toUnit: "ounce"
+  },
+  {
+    factKey: "averageMale",
+    category: "weight",
+    fromUnit: "kilogram",
+    fromValue: "70",
+    toUnit: "pound"
+  },
+  {
+    factKey: "waterLiter",
+    category: "weight",
+    fromUnit: "kilogram",
+    fromValue: "1",
+    toUnit: "pound"
+  },
+  {
+    factKey: "elephant",
+    category: "weight",
+    fromUnit: "kilogram",
+    fromValue: "6000",
+    toUnit: "pound"
+  },
+  {
+    factKey: "blueWhale",
+    category: "weight",
+    fromUnit: "kilogram",
+    fromValue: "150000",
+    toUnit: "pound"
+  },
+  {
+    factKey: "smartphone",
+    category: "weight",
+    fromUnit: "gram",
+    fromValue: "200",
+    toUnit: "ounce"
+  },
+  {
+    factKey: "penny",
+    category: "weight",
+    fromUnit: "gram",
+    fromValue: "2.5",
+    toUnit: "ounce"
+  },
+  {
+    factKey: "car",
+    category: "weight",
+    fromUnit: "kilogram",
+    fromValue: "1500",
+    toUnit: "pound"
+  },
+  {
+    factKey: "feather",
+    category: "weight",
+    fromUnit: "gram",
+    fromValue: "0.62",
+    toUnit: "ounce"
+  },
+  
+  // 속도 관련
+  {
+    factKey: "walkingSpeed",
+    category: "speed",
+    fromUnit: "kilometer_per_hour",
+    fromValue: "5",
+    toUnit: "mile_per_hour"
+  },
+  {
+    factKey: "lightSpeed",
+    category: "speed",
+    fromUnit: "meter_per_second",
+    fromValue: "299792458",
+    toUnit: "kilometer_per_hour"
+  },
+  {
+    factKey: "cheetah",
+    category: "speed",
+    fromUnit: "kilometer_per_hour",
+    fromValue: "120",
+    toUnit: "mile_per_hour"
+  },
+  {
+    factKey: "soundSpeed",
+    category: "speed",
+    fromUnit: "meter_per_second",
+    fromValue: "343",
+    toUnit: "kilometer_per_hour"
+  },
+  {
+    factKey: "usainBolt",
+    category: "speed",
+    fromUnit: "kilometer_per_hour",
+    fromValue: "37.58",
+    toUnit: "mile_per_hour"
+  },
+  {
+    factKey: "airplane",
+    category: "speed",
+    fromUnit: "kilometer_per_hour",
+    fromValue: "900",
+    toUnit: "mile_per_hour"
+  },
+  
+  // 온도 관련
+  {
+    factKey: "bodyTemp",
+    category: "temperature",
+    fromUnit: "celsius",
+    fromValue: "36.5",
+    toUnit: "fahrenheit"
+  },
+  {
+    factKey: "boilingPoint",
+    category: "temperature",
+    fromUnit: "celsius",
+    fromValue: "100",
+    toUnit: "fahrenheit"
+  },
+  {
+    factKey: "freezingPoint",
+    category: "temperature",
+    fromUnit: "celsius",
+    fromValue: "0",
+    toUnit: "fahrenheit"
+  },
+  {
+    factKey: "sunSurface",
+    category: "temperature",
+    fromUnit: "celsius",
+    fromValue: "5778",
+    toUnit: "fahrenheit"
+  },
+  {
+    factKey: "absoluteZero",
+    category: "temperature",
+    fromUnit: "celsius",
+    fromValue: "-273.15",
+    toUnit: "fahrenheit"
+  },
+  
+  // 시간 관련
+  {
+    factKey: "day",
+    category: "time",
+    fromUnit: "day",
+    fromValue: "1",
+    toUnit: "minute"
+  },
+  {
+    factKey: "year",
+    category: "time",
+    fromUnit: "year",
+    fromValue: "1",
+    toUnit: "hour"
+  },
+  {
+    factKey: "heartbeat",
+    category: "time",
+    fromUnit: "second",
+    fromValue: "1",
+    toUnit: "millisecond"
+  },
+  {
+    factKey: "blink",
+    category: "time",
+    fromUnit: "millisecond",
+    fromValue: "300",
+    toUnit: "second"
+  },
+  
+  // 데이터 관련
+  {
+    factKey: "dvd",
+    category: "data",
+    fromUnit: "gigabyte",
+    fromValue: "4.7",
+    toUnit: "megabyte"
+  },
+  {
+    factKey: "bluray",
+    category: "data",
+    fromUnit: "gigabyte",
+    fromValue: "25",
+    toUnit: "gibibyte"
+  },
+  {
+    factKey: "floppy",
+    category: "data",
+    fromUnit: "kilobyte",
+    fromValue: "1440",
+    toUnit: "megabyte"
+  },
+  {
+    factKey: "humanBrain",
+    category: "data",
+    fromUnit: "terabyte",
+    fromValue: "2.5",
+    toUnit: "gigabyte"
+  },
+  {
+    factKey: "internetMinute",
+    category: "data",
+    fromUnit: "petabyte",
+    fromValue: "2.9",
+    toUnit: "terabyte"
+  },
+  
+  // 압력 관련
+  {
+    factKey: "atmosphere",
     category: "pressure",
     fromUnit: "kilopascal",
     fromValue: "101.325",
     toUnit: "atmosphere"
   },
   {
-    fact: "바나나 한 개의 칼로리는",
-    value: "89 kcal",
-    description: "정도입니다 🍌",
+    factKey: "carTire",
+    category: "pressure",
+    fromUnit: "psi",
+    fromValue: "32",
+    toUnit: "bar"
+  },
+  
+  // 에너지 관련
+  {
+    factKey: "banana",
     category: "energy",
     fromUnit: "kilocalorie",
     fromValue: "89",
     toUnit: "joule"
+  },
+  {
+    factKey: "lightning",
+    category: "energy",
+    fromUnit: "kilowatt_hour",
+    fromValue: "1.4",
+    toUnit: "joule"
+  },
+  {
+    factKey: "household",
+    category: "energy",
+    fromUnit: "kilowatt_hour",
+    fromValue: "30",
+    toUnit: "joule"
+  },
+  
+  // 면적 관련
+  {
+    factKey: "creditCard",
+    category: "area",
+    fromUnit: "square_centimeter",
+    fromValue: "46",
+    toUnit: "square_inch"
+  },
+  {
+    factKey: "footballField",
+    category: "area",
+    fromUnit: "hectare",
+    fromValue: "0.714",
+    toUnit: "acre"
+  },
+  {
+    factKey: "centralPark",
+    category: "area",
+    fromUnit: "hectare",
+    fromValue: "341",
+    toUnit: "acre"
   }
 ]
 
 export function FunFacts() {
   const [currentFactIndex, setCurrentFactIndex] = useState(0)
+  const [randomizedFacts, setRandomizedFacts] = useState<typeof funFacts>([])
   const [isMounted, setIsMounted] = useState(false)
   const router = useRouter()
   const { t } = useLanguage()
 
+  // 팩트 배열을 랜덤하게 섞기
   useEffect(() => {
+    const shuffled = [...funFacts].sort(() => Math.random() - 0.5)
+    setRandomizedFacts(shuffled)
     setIsMounted(true)
   }, [])
 
   useEffect(() => {
-    if (!isMounted) return
+    if (!isMounted || randomizedFacts.length === 0) return
     
     const interval = setInterval(() => {
-      setCurrentFactIndex((prev) => (prev + 1) % funFacts.length)
+      setCurrentFactIndex((prev) => (prev + 1) % randomizedFacts.length)
     }, 6000) // 6초마다 변경
 
     return () => clearInterval(interval)
-  }, [isMounted])
+  }, [isMounted, randomizedFacts.length])
 
   // 마운트되지 않았으면 첫 번째 fact만 보여줌 (Hydration mismatch 방지)
-  if (!isMounted) {
+  if (!isMounted || randomizedFacts.length === 0) {
+    const firstFact = funFacts[0]
+    const factData = t.funFacts.facts[firstFact.factKey as keyof typeof t.funFacts.facts]
+    
     return (
       <div className="text-center py-4">
         <div className="bg-muted/30 rounded-lg p-4 max-w-2xl mx-auto cursor-pointer hover:bg-muted/50 transition-colors">
           <p className="text-base">
-            <span className="text-foreground">{funFacts[0].fact} </span>
-            <span className="text-xl font-bold text-primary">{funFacts[0].value}</span>
-            <span className="text-foreground">{funFacts[0].description}</span>
+            <span className="text-foreground">{factData?.fact} </span>
+            <span className="text-xl font-bold text-primary">{factData?.value}</span>
+            <span className="text-foreground">{factData?.description}</span>
           </p>
           <p className="text-sm text-muted-foreground mt-2">
             {t.funFacts.clickToConvert}
@@ -226,7 +413,8 @@ export function FunFacts() {
     )
   }
 
-  const currentFact = funFacts[currentFactIndex]
+  const currentFact = randomizedFacts[currentFactIndex]
+  const factData = t.funFacts.facts[currentFact.factKey as keyof typeof t.funFacts.facts]
 
   const handleFactClick = () => {
     const { category, fromUnit, fromValue, toUnit } = currentFact
@@ -251,9 +439,9 @@ export function FunFacts() {
           onClick={handleFactClick}
         >
           <p className="text-base">
-            <span className="text-foreground">{currentFact.fact} </span>
-            <span className="text-xl font-bold text-primary">{currentFact.value}</span>
-            <span className="text-foreground">{currentFact.description}</span>
+            <span className="text-foreground">{factData?.fact} </span>
+            <span className="text-xl font-bold text-primary">{factData?.value}</span>
+            <span className="text-foreground">{factData?.description}</span>
           </p>
           <p className="text-sm text-muted-foreground mt-2">
             {t.funFacts.clickToConvert}

@@ -151,53 +151,65 @@ export const ja = {
   // 재밌는 사실
   funFacts: {
     clickToConvert: 'クリックして変換 →',
-    facts: [
-      {
-        fact: "エミネム主演映画「8マイル」は",
-        value: "12.87 km",
-        description: "です 🎬",
-        category: "length",
-        fromUnit: "mile",
-        fromValue: "8",
-        toUnit: "kilometer"
-      },
-      {
-        fact: "エンパイアステートビルの高さは",
-        value: "381 m",
-        description: "です 🏢",
-        category: "length",
-        fromUnit: "meter",
-        fromValue: "381",
-        toUnit: "foot"
-      },
-      {
-        fact: "サッカー場の長さは通常",
-        value: "100-110 m",
-        description: "です ⚽",
-        category: "length",
-        fromUnit: "meter",
-        fromValue: "105",
-        toUnit: "yard"
-      },
-      {
-        fact: "人間の平均歩行速度は",
-        value: "5 km/h",
-        description: "です 🚶",
-        category: "speed",
-        fromUnit: "kilometer_per_hour",
-        fromValue: "5",
-        toUnit: "mile_per_hour"
-      },
-      {
-        fact: "光の速度は",
-        value: "299,792,458 m/s",
-        description: "です ⚡",
-        category: "speed",
-        fromUnit: "meter_per_second",
-        fromValue: "299792458",
-        toUnit: "kilometer_per_hour"
-      }
-    ]
+    facts: {
+      eightMile: { fact: "エミネム主演映画「8マイル」は", value: "12.87 km", description: "です 🎬" },
+      empireState: { fact: "エンパイアステートビルの高さは", value: "381 m", description: "です 🏢" },
+      soccerField: { fact: "サッカー場の長さは通常", value: "100-110 m", description: "です ⚽" },
+      everest: { fact: "エベレスト山の高さは", value: "8,848.86 m", description: "です 🏔️" },
+      titanic: { fact: "タイタニック号の長さは", value: "269 m", description: "でした 🚢" },
+      marathon: { fact: "マラソンの距離は", value: "42.195 km", description: "です 🏃‍♂️" },
+      earthCircumference: { fact: "地球の円周は", value: "40,075 km", description: "です 🌍" },
+      greatWall: { fact: "万里の長城の総延長は", value: "21,196 km", description: "です 🏯" },
+      burjKhalifa: { fact: "ブルジュ・ハリファの高さは", value: "828 m", description: "です 🏗️" },
+      goldenGate: { fact: "ゴールデンゲートブリッジの長さは", value: "2,737 m", description: "です 🌉" },
+      basketballCourt: { fact: "バスケットボールコートの長さは", value: "28 m", description: "です 🏀" },
+      tennisNet: { fact: "テニスネットの高さは", value: "0.914 m", description: "です 🎾" },
+      
+      book: { fact: "一般的な本の重さは", value: "200-400 g", description: "程度です 📚" },
+      averageMale: { fact: "成人男性の平均体重は", value: "70 kg", description: "程度です 👨" },
+      waterLiter: { fact: "水1リットルの重さは", value: "1 kg", description: "です 💧" },
+      elephant: { fact: "アフリカゾウの重さは", value: "6,000 kg", description: "程度です 🐘" },
+      blueWhale: { fact: "シロナガスクジラの重さは", value: "150,000 kg", description: "程度です 🐋" },
+      smartphone: { fact: "スマートフォンの平均重量は", value: "200 g", description: "程度です 📱" },
+      penny: { fact: "アメリカの1セント硬貨の重さは", value: "2.5 g", description: "です 🪙" },
+      car: { fact: "一般的な乗用車の重さは", value: "1,500 kg", description: "程度です 🚗" },
+      feather: { fact: "羽根一枚の重さは", value: "0.62 g", description: "程度です 🪶" },
+      
+      walkingSpeed: { fact: "人間の平均歩行速度は", value: "5 km/h", description: "です 🚶" },
+      lightSpeed: { fact: "光の速度は", value: "299,792,458 m/s", description: "です ⚡" },
+      cheetah: { fact: "チーターの最高速度は", value: "120 km/h", description: "です 🐆" },
+      soundSpeed: { fact: "音の速度は", value: "343 m/s", description: "です 🔊" },
+      usainBolt: { fact: "ウサイン・ボルトの最高速度は", value: "37.58 km/h", description: "でした 🏃‍♂️" },
+      airplane: { fact: "旅客機の平均速度は", value: "900 km/h", description: "です ✈️" },
+      
+      bodyTemp: { fact: "人間の正常体温は", value: "36.5°C", description: "です 🌡️" },
+      boilingPoint: { fact: "水の沸点は", value: "100°C", description: "です 🔥" },
+      freezingPoint: { fact: "水の氷点は", value: "0°C", description: "です 🧊" },
+      sunSurface: { fact: "太陽表面の温度は", value: "5,778°C", description: "です ☀️" },
+      absoluteZero: { fact: "絶対零度は", value: "-273.15°C", description: "です 🥶" },
+      
+      day: { fact: "1日は", value: "1,440分", description: "です 📅" },
+      year: { fact: "1年は", value: "8,760時間", description: "です 🗓️" },
+      heartbeat: { fact: "心拍1回は", value: "1秒", description: "程度です 💓" },
+      blink: { fact: "まばたきは", value: "300ms", description: "程度です 👁️" },
+      
+      dvd: { fact: "DVD1枚の容量は", value: "4.7 GB", description: "です 💿" },
+      bluray: { fact: "ブルーレイディスクの容量は", value: "25-50 GB", description: "です 💽" },
+      floppy: { fact: "フロッピーディスクの容量は", value: "1.44 MB", description: "でした 💾" },
+      humanBrain: { fact: "人間の脳の記憶容量は", value: "2.5 TB", description: "程度です 🧠" },
+      internetMinute: { fact: "インターネットで1分間に生成されるデータは", value: "2.9 PB", description: "です 🌐" },
+      
+      atmosphere: { fact: "大気圧は", value: "101.325 kPa", description: "です 🌪️" },
+      carTire: { fact: "自動車タイヤの圧力は", value: "32 psi", description: "程度です 🚗" },
+      
+      banana: { fact: "バナナ1本のカロリーは", value: "89 kcal", description: "程度です 🍌" },
+      lightning: { fact: "雷1回のエネルギーは", value: "1.4 kWh", description: "程度です ⚡" },
+      household: { fact: "家庭の1日の電力使用量は", value: "30 kWh", description: "程度です 🏠" },
+      
+      creditCard: { fact: "クレジットカードの面積は", value: "46 cm²", description: "です 💳" },
+      footballField: { fact: "アメリカンフットボール場の面積は", value: "0.714ヘクタール", description: "です 🏈" },
+      centralPark: { fact: "セントラルパークの面積は", value: "341ヘクタール", description: "です 🌳" }
+    }
   },
 
   // 単位名翻訳
