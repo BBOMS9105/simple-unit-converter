@@ -8,8 +8,22 @@ import { categoryNames as jaCategoryNames } from '@/locales/ja'
 import { categoryNames as esCategoryNames } from '@/locales/es'
 import type { Locale } from '@/lib/i18n'
 
+interface Unit {
+  id: string
+  name: string
+  symbol: string
+}
+
+interface Category {
+  id: string
+  name: string
+  description: string
+  icon: string
+  units: Unit[]
+}
+
 interface CategoryPageContentProps {
-  category: any
+  category: Category
   categoryId: string
 }
 
@@ -45,7 +59,7 @@ export function CategoryPageContent({ category, categoryId }: CategoryPageConten
       'price': '0',
       'priceCurrency': 'USD'
     },
-    'featureList': category.units.map((unit: any) => `${unit.name} (${unit.symbol})`),
+    'featureList': category.units.map((unit: Unit) => `${unit.name} (${unit.symbol})`),
     'inLanguage': locale === 'ko' ? 'ko-KR' : locale === 'ja' ? 'ja-JP' : locale === 'es' ? 'es-ES' : 'en-US'
   }
 
@@ -82,7 +96,7 @@ export function CategoryPageContent({ category, categoryId }: CategoryPageConten
               {t.converter.providesReliableResults}
             </p>
             <div className="mt-4 flex flex-wrap justify-center gap-2">
-              {category.units.slice(0, 8).map((unit: any) => (
+              {category.units.slice(0, 8).map((unit: Unit) => (
                 <span
                   key={unit.id}
                   className="inline-flex items-center px-2 py-1 rounded-md bg-background border text-xs"

@@ -91,6 +91,6 @@ export function getLocaleFromCookie(cookies: string): Locale {
 // 단위 이름 번역 헬퍼 함수
 export function getUnitName(unitId: string, t: Translation): string {
   // units 객체에서 단위 ID에 해당하는 번역을 찾음
-  const unitName = (t.units as any)[unitId]
+  const unitName = (t.units as Record<string, string>)[unitId]
   return unitName || unitId // 번역이 없으면 원본 ID 반환
 } 

@@ -10,7 +10,6 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-  DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu"
 import { Button } from "@/components/ui/button"
 
@@ -30,15 +29,7 @@ export function Header() {
     { id: 'energy', name: t.categories.energy.name, icon: '⚡', href: '/energy' },
   ]
 
-  // 자주 사용하는 단위변환 바로가기
-  const quickConverters = [
-    { name: t.quickConverters.cmToInch, href: '/length?from=centimeter&to=inch&value=1' },
-    { name: t.quickConverters.kgToLb, href: '/weight?from=kilogram&to=pound&value=1' },
-    { name: t.quickConverters.celsiusToFahrenheit, href: '/temperature?from=celsius&to=fahrenheit&value=20' },
-    { name: t.quickConverters.literToGallon, href: '/volume?from=liter&to=gallon&value=1' },
-    { name: t.quickConverters.kmToMile, href: '/length?from=kilometer&to=mile&value=1' },
-    { name: t.quickConverters.meterToFoot, href: '/length?from=meter&to=foot&value=1' },
-  ]
+
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">

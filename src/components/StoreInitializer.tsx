@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react'
 import { initializeStores, useConverterStore, useSettingsStore } from '@/store'
-import { useCategoriesStore } from '@/store'
 
 export function StoreInitializer() {
   const [isInitialized, setIsInitialized] = useState(false)

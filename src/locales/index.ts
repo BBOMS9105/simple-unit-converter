@@ -15,16 +15,6 @@ export type Translation = {
     mobileTitle: string
     more: string
   }
-  quickConverters: {
-    title: string
-    cmToInch: string
-    kgToLb: string
-    celsiusToFahrenheit: string
-    literToGallon: string
-    kmToMile: string
-    meterToFoot: string
-    viewAll: string
-  }
   categories: {
     title: string
     length: { name: string; description: string }
@@ -39,7 +29,7 @@ export type Translation = {
     energy: { name: string; description: string }
     convert: string
     // 카테고리별 이름을 위한 간단한 매핑
-    [key: string]: any
+    [key: string]: string | { name: string; description: string }
   }
   converter: {
     from: string
@@ -99,19 +89,9 @@ export type Translation = {
   footer: {
     madeWith: string
     openSource: string
-    disclaimer: string
   }
   funFacts: {
     clickToConvert: string
-    facts: readonly {
-      fact: string
-      value: string
-      description: string
-      category: string
-      fromUnit: string
-      fromValue: string
-      toUnit: string
-    }[]
   }
   units: {
     // Length units

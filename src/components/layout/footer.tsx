@@ -55,9 +55,7 @@ export function Footer() {
           <p className="text-sm text-muted-foreground">
             © 2025 Simple Unit Converter. All rights reserved.
           </p>
-          <p className="text-xs text-muted-foreground text-center max-w-2xl">
-            {t.footer.disclaimer}
-          </p>
+
         </div>
       </div>
     </footer>

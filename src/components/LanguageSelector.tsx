@@ -6,7 +6,7 @@ import { locales, localeNames, localeFlags } from '@/lib/i18n'
 import type { Locale } from '@/lib/i18n'
 
 export function LanguageSelector() {
-  const { locale, setLocale, t } = useLanguage()
+  const { locale, setLocale } = useLanguage()
   const [isOpen, setIsOpen] = useState(false)
 
   const handleLocaleChange = (newLocale: Locale) => {
