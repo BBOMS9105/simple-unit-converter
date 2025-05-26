@@ -194,6 +194,13 @@ export const en = {
     foot: 'Foot',
     yard: 'Yard',
     mile: 'Mile',
+    micrometer: 'Micrometer',
+    nanometer: 'Nanometer',
+    angstrom: 'Angstrom',
+    nautical_mile: 'Nautical Mile',
+    furlong: 'Furlong',
+    chain: 'Chain',
+    rod: 'Rod',
     
     // 무게 단위
     milligram: 'Milligram',
@@ -203,6 +210,10 @@ export const en = {
     ounce: 'Ounce',
     ton: 'Ton',
     stone: 'Stone',
+    microgram: 'Microgram',
+    carat: 'Carat',
+    dalton: 'Dalton',
+    slug: 'Slug',
     
     // 부피 단위
     milliliter: 'Milliliter',
@@ -214,12 +225,21 @@ export const en = {
     fluid_ounce: 'Fluid Ounce',
     tablespoon: 'Tablespoon',
     teaspoon: 'Teaspoon',
+    cubic_meter: 'Cubic Meter',
+    cubic_centimeter: 'Cubic Centimeter',
+    cubic_inch: 'Cubic Inch',
+    cubic_foot: 'Cubic Foot',
+    oil_barrel: 'Oil Barrel',
     
     // 온도 단위
     celsius: 'Celsius',
     fahrenheit: 'Fahrenheit',
     kelvin: 'Kelvin',
     rankine: 'Rankine',
+    reaumur: 'Réaumur',
+    romer: 'Rømer',
+    newton_scale: 'Newton Scale',
+    delisle: 'Delisle',
     
     // 시간 단위
     millisecond: 'Millisecond',
@@ -230,6 +250,12 @@ export const en = {
     week: 'Week',
     month: 'Month',
     year: 'Year',
+    nanosecond: 'Nanosecond',
+    microsecond: 'Microsecond',
+    decade: 'Decade',
+    century: 'Century',
+    millennium: 'Millennium',
+    fortnight: 'Fortnight',
     
     // 데이터 단위
     bit: 'Bit',
@@ -244,6 +270,13 @@ export const en = {
     gibibyte: 'Gibibyte',
     tebibyte: 'Tebibyte',
     pebibyte: 'Pebibyte',
+    nibble: 'Nibble',
+    exabyte: 'Exabyte',
+    zettabyte: 'Zettabyte',
+    yottabyte: 'Yottabyte',
+    exbibyte: 'Exbibyte',
+    zebibyte: 'Zebibyte',
+    yobibyte: 'Yobibyte',
     
     // 속도 단위
     meter_per_second: 'Meter per second',
@@ -252,6 +285,7 @@ export const en = {
     foot_per_second: 'Foot per second',
     knot: 'Knot',
     mach: 'Mach',
+    speed_of_light: 'Speed of Light',
     
     // 면적 단위
     square_millimeter: 'Square millimeter',
@@ -262,6 +296,9 @@ export const en = {
     square_foot: 'Square foot',
     acre: 'Acre',
     hectare: 'Hectare',
+    square_yard: 'Square Yard',
+    square_mile: 'Square Mile',
+    are: 'Are',
     
     // 압력 단위
     pascal: 'Pascal',
@@ -271,6 +308,12 @@ export const en = {
     psi: 'PSI',
     torr: 'Torr',
     mmhg: 'Millimeter of mercury',
+    millibar: 'Millibar',
+    pound_force_per_square_foot: 'Pound-force per square foot',
+    inch_of_mercury: 'Inch of Mercury',
+    centimeter_of_water: 'Centimeter of Water',
+    inch_of_water: 'Inch of Water',
+    technical_atmosphere: 'Technical Atmosphere',
     
     // 에너지 단위
     joule: 'Joule',
@@ -279,7 +322,13 @@ export const en = {
     kilocalorie: 'Kilocalorie',
     watt_hour: 'Watt hour',
     kilowatt_hour: 'Kilowatt hour',
-    btu: 'BTU'
+    btu: 'BTU',
+    electronvolt: 'Electronvolt',
+    megaelectronvolt: 'Megaelectronvolt',
+    gigaelectronvolt: 'Gigaelectronvolt',
+    foot_pound_force: 'Foot-pound force',
+    therm_us: 'Therm (US)',
+    ton_of_tnt: 'Ton of TNT'
   },
 
   // 공유 기능

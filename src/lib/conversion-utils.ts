@@ -67,6 +67,18 @@ export function convertTemperature(
       case 'rankine':
         celsius = (value - 491.67) * 5/9
         break
+      case 'reaumur':
+        celsius = value * 5/4
+        break
+      case 'romer':
+        celsius = (value - 7.5) * 40/21
+        break
+      case 'newton_scale':
+        celsius = value * 100/33
+        break
+      case 'delisle':
+        celsius = 100 - (value * 2/3)
+        break
       default:
         throw new Error(`알 수 없는 온도 단위: ${fromUnitId}`)
     }
@@ -86,6 +98,18 @@ export function convertTemperature(
         break
       case 'rankine':
         result = celsius * 9/5 + 491.67
+        break
+      case 'reaumur':
+        result = celsius * 4/5
+        break
+      case 'romer':
+        result = (celsius * 21/40) + 7.5
+        break
+      case 'newton_scale':
+        result = celsius * 33/100
+        break
+      case 'delisle':
+        result = (100 - celsius) * 3/2
         break
       default:
         throw new Error(`알 수 없는 온도 단위: ${toUnitId}`)
