@@ -194,6 +194,13 @@ export const ko = {
     foot: '피트',
     yard: '야드',
     mile: '마일',
+    micrometer: '마이크로미터',
+    nanometer: '나노미터',
+    angstrom: '옹스트롬',
+    nautical_mile: '해리',
+    furlong: '펄롱',
+    chain: '체인',
+    rod: '로드',
     
     // 무게 단위
     milligram: '밀리그램',
@@ -203,6 +210,10 @@ export const ko = {
     ounce: '온스',
     ton: '톤',
     stone: '스톤',
+    microgram: '마이크로그램',
+    carat: '캐럿',
+    dalton: '달톤',
+    slug: '슬러그',
     
     // 부피 단위
     milliliter: '밀리리터',
@@ -214,12 +225,21 @@ export const ko = {
     fluid_ounce: '액량온스',
     tablespoon: '테이블스푼',
     teaspoon: '티스푼',
+    cubic_meter: '세제곱미터',
+    cubic_centimeter: '세제곱센티미터',
+    cubic_inch: '세제곱인치',
+    cubic_foot: '세제곱피트',
+    oil_barrel: '배럴 (석유)',
     
     // 온도 단위
     celsius: '섭씨',
     fahrenheit: '화씨',
     kelvin: '켈빈',
     rankine: '랭킨',
+    reaumur: '열씨',
+    romer: '뢰머',
+    newton_scale: '뉴턴도',
+    delisle: '드릴',
     
     // 시간 단위
     millisecond: '밀리초',
@@ -230,6 +250,12 @@ export const ko = {
     week: '주',
     month: '월',
     year: '년',
+    nanosecond: '나노초',
+    microsecond: '마이크로초',
+    decade: '십년',
+    century: '세기',
+    millennium: '천년',
+    fortnight: '2주',
     
     // 데이터 단위
     bit: '비트',
@@ -244,6 +270,13 @@ export const ko = {
     gibibyte: '기비바이트',
     tebibyte: '테비바이트',
     pebibyte: '페비바이트',
+    nibble: '니블',
+    exabyte: '엑사바이트',
+    zettabyte: '제타바이트',
+    yottabyte: '요타바이트',
+    exbibyte: '엑스비바이트',
+    zebibyte: '제비바이트',
+    yobibyte: '요비바이트',
     
     // 속도 단위
     meter_per_second: '미터/초',
@@ -252,6 +285,7 @@ export const ko = {
     foot_per_second: '피트/초',
     knot: '노트',
     mach: '마하',
+    speed_of_light: '광속',
     
     // 면적 단위
     square_millimeter: '제곱밀리미터',
@@ -262,6 +296,9 @@ export const ko = {
     square_foot: '제곱피트',
     acre: '에이커',
     hectare: '헥타르',
+    square_yard: '제곱야드',
+    square_mile: '제곱마일',
+    are: '아르',
     
     // 압력 단위
     pascal: '파스칼',
@@ -271,6 +308,12 @@ export const ko = {
     psi: 'PSI',
     torr: '토르',
     mmhg: '수은주밀리미터',
+    millibar: '밀리바',
+    pound_force_per_square_foot: '제곱피트당 파운드힘',
+    inch_of_mercury: '인치 수은주',
+    centimeter_of_water: '센티미터 수주',
+    inch_of_water: '인치 수주',
+    technical_atmosphere: '공학기압',
     
     // 에너지 단위
     joule: '줄',
@@ -279,7 +322,13 @@ export const ko = {
     kilocalorie: '킬로칼로리',
     watt_hour: '와트시',
     kilowatt_hour: '킬로와트시',
-    btu: 'BTU'
+    btu: 'BTU',
+    electronvolt: '전자볼트',
+    megaelectronvolt: '메가전자볼트',
+    gigaelectronvolt: '기가전자볼트',
+    foot_pound_force: '피트파운드힘',
+    therm_us: '썸 (미국)',
+    ton_of_tnt: '톤 TNT'
   },
 
   // 공유 기능

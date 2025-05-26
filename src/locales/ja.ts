@@ -206,6 +206,13 @@ export const ja = {
     foot: 'フィート',
     yard: 'ヤード',
     mile: 'マイル',
+    micrometer: 'マイクロメートル',
+    nanometer: 'ナノメートル',
+    angstrom: 'オングストローム',
+    nautical_mile: '海里',
+    furlong: 'ハロン',
+    chain: 'チェーン',
+    rod: 'ロッド',
     
     // 重量単位
     milligram: 'ミリグラム',
@@ -215,6 +222,10 @@ export const ja = {
     ounce: 'オンス',
     ton: 'トン',
     stone: 'ストーン',
+    microgram: 'マイクログラム',
+    carat: 'カラット',
+    dalton: 'ダルトン',
+    slug: 'スラグ',
     
     // 体積単位
     milliliter: 'ミリリットル',
@@ -226,12 +237,21 @@ export const ja = {
     fluid_ounce: '液量オンス',
     tablespoon: '大さじ',
     teaspoon: '小さじ',
+    cubic_meter: '立方メートル',
+    cubic_centimeter: '立方センチメートル',
+    cubic_inch: '立方インチ',
+    cubic_foot: '立方フィート',
+    oil_barrel: '石油バレル',
     
     // 温度単位
     celsius: '摂氏',
     fahrenheit: '華氏',
     kelvin: 'ケルビン',
     rankine: 'ランキン',
+    reaumur: 'レオミュール度',
+    romer: 'レーマー度',
+    newton_scale: 'ニュートン度',
+    delisle: 'ドリル度',
     
     // 時間単位
     millisecond: 'ミリ秒',
@@ -242,6 +262,12 @@ export const ja = {
     week: '週',
     month: '月',
     year: '年',
+    nanosecond: 'ナノ秒',
+    microsecond: 'マイクロ秒',
+    decade: '十年紀',
+    century: '世紀',
+    millennium: '千年紀',
+    fortnight: '2週間',
     
     // データ単位
     bit: 'ビット',
@@ -256,6 +282,13 @@ export const ja = {
     gibibyte: 'ギビバイト',
     tebibyte: 'テビバイト',
     pebibyte: 'ペビバイト',
+    nibble: 'ニブル',
+    exabyte: 'エクサバイト',
+    zettabyte: 'ゼタバイト',
+    yottabyte: 'ヨタバイト',
+    exbibyte: 'エクスビバイト',
+    zebibyte: 'ゼビバイト',
+    yobibyte: 'ヨビバイト',
     
     // 速度単位
     meter_per_second: 'メートル毎秒',
@@ -264,6 +297,7 @@ export const ja = {
     foot_per_second: 'フィート毎秒',
     knot: 'ノット',
     mach: 'マッハ',
+    speed_of_light: '光速',
     
     // 面積単位
     square_millimeter: '平方ミリメートル',
@@ -274,6 +308,9 @@ export const ja = {
     square_foot: '平方フィート',
     acre: 'エーカー',
     hectare: 'ヘクタール',
+    square_yard: '平方ヤード',
+    square_mile: '平方マイル',
+    are: 'アール',
     
     // 圧力単位
     pascal: 'パスカル',
@@ -283,6 +320,12 @@ export const ja = {
     psi: 'PSI',
     torr: 'トール',
     mmhg: '水銀柱ミリメートル',
+    millibar: 'ミリバール',
+    pound_force_per_square_foot: '重量ポンド毎平方フィート',
+    inch_of_mercury: '水銀柱インチ',
+    centimeter_of_water: '水柱センチメートル',
+    inch_of_water: '水柱インチ',
+    technical_atmosphere: '工学気圧',
     
     // エネルギー単位
     joule: 'ジュール',
@@ -291,7 +334,13 @@ export const ja = {
     kilocalorie: 'キロカロリー',
     watt_hour: 'ワット時',
     kilowatt_hour: 'キロワット時',
-    btu: 'BTU'
+    btu: 'BTU',
+    electronvolt: '電子ボルト',
+    megaelectronvolt: 'メガ電子ボルト',
+    gigaelectronvolt: 'ギガ電子ボルト',
+    foot_pound_force: 'フィート重量ポンド',
+    therm_us: 'サーム (米国)',
+    ton_of_tnt: 'TNTトン'
   },
 
   // 共有機能
